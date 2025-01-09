@@ -134,7 +134,7 @@ Nerd wherever they like."
 [[Do nothing->crNothing]]
 
 
-:: \ walkSchool {"position":"1125,925","size":"100,100"}
+:: \ walkSchool {"position":"1175,1225","size":"100,100"}
 
 
 
@@ -1203,10 +1203,42 @@ Your underwear (cycling-link:bind $underwearOut, "is", "is not") sticking out th
 
 
 :: obBully {"position":"1850,525","size":"100,100"}
+{(if: $bully is "male")[
+	*Against your better judgment and because there are no other spots, you sit next to a known bully... "John"*
+    *As you sit down, he notice you*
+    "Woh, nerd alert over here" *He say mocking you*
+](else:)[
+	*Against your better judgment and because there are no other spots, you sit next to a known bully... "Meg"*
+    *As you sit down, she notice you*
+    "Woh, nerd alert over here" *She say mocking you*
+]
+]}
+[[Telk them to knock off->obbKnock]]
+[[Laugh it off->obbOff]]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
 
 
-
-:: obNerd {"position":"1900,975","size":"100,100"}
+:: obNerd {"position":"1850,975","size":"100,100"}
 {(if: $bully is "Male")[
 	*You sit next to the nerd. You know who they are. It is Scott dressed in a t-shirt and slacks.*
 ](else:)[
@@ -1311,7 +1343,7 @@ $wedgieList
 -->
 
 
-:: obUnknown {"position":"1850,775","size":"100,100"}
+:: obUnknown {"position":"1850,800","size":"100,100"}
 *You sit next to the person you do not know*
 
 "Hi..." *You say shyly*
@@ -1355,7 +1387,15 @@ $wedgieList
 -->
 
 
-:: obuTrains {"position":"2000,600","size":"100,100"}
+:: obbKnock {"position":"2000,450","size":"100,100"}
+
+
+
+:: obbOff {"position":"2000,600","size":"100,100"}
+
+
+
+:: obuTrains {"position":"2000,750","size":"100,100"}
 "Do you like trains?." *You say trying to start a conversation*
 
 "Trains... Trains?" {(if: $bully is "Male")[
@@ -1480,7 +1520,7 @@ $wedgieList
 -->
 
 
-:: obuWeather {"position":"2000,825","size":"100,100"}
+:: obuWeather {"position":"2000,875","size":"100,100"}
 "The weather is nice today." *You say trying to start a conversation*
 
 "Its fine." {(if: $bully is "Male")[

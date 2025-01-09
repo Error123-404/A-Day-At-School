@@ -221,7 +221,7 @@ You make it to the bus stop after a short walk and you stand and wait on your ph
 ](else:)[
 	``[Locked] ``~~Gives you an normal wedgie~~
 ]}
-[[Does nothing-&gt;bsNothing]]</tw-passagedata><tw-passagedata pid="5" name=" walkSchool" tags="" position="1125,925" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="MainMenu" tags="" position="650,700" size="100,100">Hello!
+[[Does nothing-&gt;bsNothing]]</tw-passagedata><tw-passagedata pid="5" name=" walkSchool" tags="" position="1175,1225" size="100,100"></tw-passagedata><tw-passagedata pid="6" name="MainMenu" tags="" position="650,700" size="100,100">Hello!
 
 Welcome to &#39;&#39;A Day at School&#39;&#39;!
 
@@ -1141,7 +1141,39 @@ You fail to notice your underwear sticking out the back of your pants.
 	(set: $wedgieList to it + &quot; When you asked for a car ride from your mom, she panted you and then gave you a dangling wedgie.&quot;)
 ]
 ]}
-[[Contiune to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="28" name="obBully" tags="" position="1850,525" size="100,100"></tw-passagedata><tw-passagedata pid="29" name="obUnknown" tags="" position="1850,775" size="100,100">*You sit next to the person you do not know*
+[[Contiune to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="28" name="obBully" tags="" position="1850,525" size="100,100">{(if: $bully is &quot;male&quot;)[
+	*Against your better judgment and because there are no other spots, you sit next to a known bully... &quot;John&quot;*
+    *As you sit down, he notice you*
+    &quot;Woh, nerd alert over here&quot; *He say mocking you*
+](else:)[
+	*Against your better judgment and because there are no other spots, you sit next to a known bully... &quot;Meg&quot;*
+    *As you sit down, she notice you*
+    &quot;Woh, nerd alert over here&quot; *She say mocking you*
+]
+]}
+[[Telk them to knock off-&gt;obbKnock]]
+[[Laugh it off-&gt;obbOff]]
+&lt;!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+--&gt;</tw-passagedata><tw-passagedata pid="29" name="obUnknown" tags="" position="1850,800" size="100,100">*You sit next to the person you do not know*
 
 &quot;Hi...&quot; *You say shyly*
 
@@ -1181,7 +1213,7 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="30" name="obNerd" tags="" position="1900,975" size="100,100">{(if: $bully is &quot;Male&quot;)[
+--&gt;</tw-passagedata><tw-passagedata pid="30" name="obNerd" tags="" position="1850,975" size="100,100">{(if: $bully is &quot;Male&quot;)[
 	*You sit next to the nerd. You know who they are. It is Scott dressed in a t-shirt and slacks.*
 ](else:)[
 	*You sit next to the nerd. You know who they are. It is Meg dressed in a t-shirt and legging.*
@@ -1282,7 +1314,7 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="31" name="obuWeather" tags="" position="2000,825" size="100,100">&quot;The weather is nice today.&quot; *You say trying to start a conversation*
+--&gt;</tw-passagedata><tw-passagedata pid="31" name="obuWeather" tags="" position="2000,875" size="100,100">&quot;The weather is nice today.&quot; *You say trying to start a conversation*
 
 &quot;Its fine.&quot; {(if: $bully is &quot;Male&quot;)[
 *He says looking back at you*
@@ -1433,7 +1465,7 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="32" name="obuTrains" tags="" position="2000,600" size="100,100">&quot;Do you like trains?.&quot; *You say trying to start a conversation*
+--&gt;</tw-passagedata><tw-passagedata pid="32" name="obuTrains" tags="" position="2000,750" size="100,100">&quot;Do you like trains?.&quot; *You say trying to start a conversation*
 
 &quot;Trains... Trains?&quot; {(if: $bully is &quot;Male&quot;)[
 *He says looking back at you*
@@ -1554,7 +1586,7 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata></tw-storydata>
+--&gt;</tw-passagedata><tw-passagedata pid="33" name="obbKnock" tags="" position="2000,450" size="100,100"></tw-passagedata><tw-passagedata pid="34" name="obbOff" tags="" position="2000,600" size="100,100"></tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

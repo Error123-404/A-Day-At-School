@@ -1433,7 +1433,128 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="32" name="obuTrains" tags="" position="1975,650" size="100,100"></tw-passagedata></tw-storydata>
+--&gt;</tw-passagedata><tw-passagedata pid="32" name="obuTrains" tags="" position="2000,600" size="100,100">&quot;Do you like trains?.&quot; *You say trying to start a conversation*
+
+&quot;Trains... Trains?&quot; {(if: $bully is &quot;Male&quot;)[
+*He says looking back at you*
+](else:)[
+*She says looking back at you*
+]}
+&quot;You really just asked me if i like trains? That is so nerdy&quot; {(if: $bully is &quot;Male&quot;)[
+*He says snickering*
+](else:)[
+*She says snickering*
+]
+}
+
+(link:&quot;\&quot;I&#39;m just trying to have a nice conversation\&quot;&quot;)[=
+&quot;I&#39;m just trying to have a nice conversation...&quot; *You say being kinda pushy*
+
+&quot;More like trying to be a nerd... maybe I should teach you not to be.&quot;  {(if: $bully is &quot;Male&quot;)[
+(if: $underwearOut is &quot;is&quot;)[
+*He says reaching towards your waistband*
+](else:)[
+*He says reaching towards the back of your $pants*
+]
+](else:)[
+(if: $underwearOut is &quot;is&quot;)[
+*She says reaching towards your waistband*
+](else:)[
+*She says reaching towards the back of your $pants*
+]
+]}
+(link:&quot;\&quot;Wait... Please... Don&#39;t give me a wedgie?!\&quot;&quot;)[=
+&quot;Wait... Please... Don&#39;t give me a wedgie?!&quot; *You say pathetically*
+&quot;Oh the nerd is begging already...&quot;{
+(if: $underwearOut is &quot;is&quot;)[
+	(if: $bully is &quot;Male&quot;)[
+    	*He says grabing your $underwearWaistbandColor waistband* &quot;Besides, I must see the rest of your underwear after noticing your $underwearWaistbandColor waistband sticking out {
+        (if: $underwearNamed is &quot;is&quot;)[
+        	and I noticed you wrote your name on your waistband... &quot;$userName&quot;... how nerdy. Your just begging for a wedgie&quot;
+        ](else:)[
+         &quot;
+        ]
+        }
+    ](else:)[
+    	*She says grabing your $underwearWaistbandColor waistband* &quot;Besides, I must see the rest of your underwear after noticing your $underwearWaistbandColor waistband sticking out {
+        (if: $underwearNamed is &quot;is&quot;)[
+        	and I noticed you wrote your name on your waistband... &quot;$userName&quot;... how nerdy. Your just begging for a wedgie&quot;
+        ](else:)[
+         &quot;
+        ]
+        }
+    ]
+](else:)[
+	{(if: $bully is &quot;Male&quot;)[
+	*He says reaching into your $pants and grabing your waistband*
+    ](else:)[
+	*He says reaching into your $pants and grabing your waistband*
+	]}
+]}
+
+(link: &quot;\&quot;Wait please... no... wait!\&quot;&quot;)[=
+&quot;Wait please... no... wait!&quot; *You say in a panic*
+{(if: $bully is &quot;Male&quot;)[
+	&quot;Too late&quot; *He responds*
+    ](else:)[
+	&quot;Too late&quot; *She responds*
+	]}
+(text-style:&quot;bold&quot;,&quot;superscript&quot;,&quot;blur&quot;)[Streeeeeeee](text-style:&quot;bold&quot;,&quot;blur&quot;)[eeeeeeeeeee](text-style:&quot;bold&quot;,&quot;subscript&quot;,&quot;blur&quot;)[eeeeeeeeech]
+&quot;aghhhhh&quot; *You scream out in pain your $underwearBaseColor $underwearType are pulled up hard*
+*Other people start to notice what is going on and start snickering and taking photos.*
+{(if: $bully is &quot;Male&quot;)[
+		(if: $underwearPattern is &quot;no pattern&quot;)[
+    		&quot;Wow, your wearing $underwearBaseColor $underwearType... your a big fucking nerd... and deserve this wedgie!&quot; *He says pulling harder on the underwear, your butt lifting off the seat a bit*
+        ](else:)[
+			&quot;Wow, your wearing $underwearBaseColor $underwearType with $underwearPattern on them... your a big fucking nerd... and deserve this wedgie!&quot; *He says pulling harder on the underwear, your butt lifting off the seat a bit*
+		]
+    ](else:)[
+    	(if: $underwearPattern is &quot;no pattern&quot;)[
+    		&quot;Wow, your wearing $underwearBaseColor $underwearType... your a big fucking nerd... and deserve this wedgie!&quot; *She says pulling harder on the underwear, your butt lifting off the seat a bit*
+        ](else:)[
+			&quot;Wow, your wearing $underwearBaseColor $underwearType with $underwearPattern on them... your a big fucking nerd... and deserve this wedgie!&quot; *She says pulling harder on the underwear, your butt lifting off the seat a bit*
+		]
+    ]}
+
+(link: &quot;\&quot;Aghhhh... Please let go. Everyone is watching\&quot;&quot;)[=
+&quot;Aghhhh... Please let go. Everyone is watching&quot; *You beg like the nerd you are*
+{(if: $bully is &quot;Male&quot;)[
+	&quot;Hmmmmm.. fine&quot; *He lets go*
+](else:)[
+	&quot;Hmmmmm.. fine&quot; *She lets go*
+]}
+*The bus comes to a stop at the school as you fix your underwear. You try your best but your underwear waistband is sticking out after the wedgie*{
+        (set: $nerdValue to it + 25)
+		(if: $nerdValue &gt; 100)[
+			(set: $nerdValue to 100)
+		]
+        (set: $prevWedgie to &quot;yes&quot;)
+        (set: $totalWedgies to it + 1)
+        (set: $wedgieList to it + &quot; On the Bus, Alex gave you a hard wedgie as people looked on.&quot;)
+        (set: $underwearOut to &quot;is&quot;)
+        }
+[[Get off the bus-&gt;schoolStart]]
+&lt;!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+--&gt;</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

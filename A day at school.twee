@@ -1,0 +1,1685 @@
+:: StoryTitle
+A day at school
+
+
+:: StoryData
+{
+  "ifid": "41EF4D7F-FB76-45D3-8588-5C5B888188A2",
+  "format": "Harlowe",
+  "format-version": "3.3.9",
+  "start": "MainMenu",
+  "zoom": 1
+}
+
+
+:: \ busStop {"position":"1325,750","size":"100,100"}
+*You decide the best course of action is to head to the bus stop and get on the bus*
+
+You walk to the bus stop and, luckly, no one see you.
+(link: "Contiune Walking")[=
+You make it to the bus stop after a short walk and you stand and wait on your phone.
+(link: "Wait for the bus")[=
+{As you wait for the bus, more and more people show up waiting for the bus. You keep your head down and try not to draw attention to yourself. This doesn't work as you don't notice a local bully 
+(if: $bully is "Male")[
+	Matt
+](else:)[
+	Savannah
+] approching you.}
+
+{(if: $bully is "Male")[
+	What does Matt do?
+](else:)[
+	What does Savannah do?
+]}
+{(if: ($underwearOut is "is") and ($prevWedgie is "yes") and ($nerdValue is 100))[
+	[[Gives you an atomic wedgie->bsAtomic]]
+](else:)[
+	``[Locked] ``~~Gives you an atomic wedgie~~
+]}
+{(if: ($underwearOut is "is") and ($prevWedgie is "yes") and ($nerdValue >=50))[
+	[[Gives you a dangling wedgie->bsDangle]]
+](else:)[
+	``[Locked] ``~~Gives you an dangling wedgie~~
+]}
+{(if: ($underwearOut is "is") and ($nerdValue >=50))[
+	[[Gives you a normal wedgie->bsNormal]]
+](else:)[
+	``[Locked] ``~~Gives you an normal wedgie~~
+]}
+[[Does nothing->bsNothing]]
+
+
+:: \ tryCarRide {"position":"1275,600","size":"100,100"}
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+-->
+{(if:$bully is "Male")[
+	*A car ride would work well as you can make it to the school on time but... your dad might not be too happy about it*
+](else:)[
+	*A car ride would work well as you can make it to the school on time but... your mom might not be too happy about it*
+]}
+
+{You walk out of your room with your backpack in hand. You head downstairs to the kitchen where you hear them up and about.
+
+(if:$bully is "Male")[
+	As you walk into the kitchen you see your dad, he is making coffee and leaning against the counter reading a news paper. He don't notice it you.
+](else:)[
+	As you walk into the kitchen you see your mom, she is making coffee and leaning against the counter reading a magazene. She don't notice it you.
+]}
+
+(Link:"*Muster up the courage to speak*")[=
+*You speak up*
+{(if:$bully is "Male")[
+	"Dad, can you drive me to school?"
+](else:)[
+	"Mom, can you drive me to school?"
+]}
+{(if:$bully is "Male")[
+	*He turns to look at you, not happy about it*
+](else:)[
+	*She turns to look at you, not happy about it*
+]}
+{(if:$bully is "Male")[
+	"Of course" *He says with mock happiness* "I'll drive 
+](else:)[
+	"Of course" *She says with mock happiness* "I'll drive 
+]
+(if:$gender is "male")[
+	Mr. 
+](else:)[
+	Ms. 
+]
+Nerd wherever they like."
+}
+
+(Link:"*Thank them for understanding*")[=
+*You speak up again*
+"Thank you for willing to drive me to school" *You say without understanding they not happy*
+*You turn to walk away and they have an idea to teach you a lession*
+{(if: ($underwearOut is "is") and ($nerdValue >= 76))[
+	[[Gives you an atomic wedgie->crAtomic]]
+](else:)[
+	`[Locked]` ~~Gives you an atomic wedgie~~
+]}
+{(if: ($underwearOut is "is") and ($nerdValue >= 51))[
+	[[Gives you a shoulder wedgie->crShoulder]]
+](else:)[
+	`[Locked]` ~~Gives you an shoulder wedgie~~
+]}
+{(if: $underwearOut is "is")[
+	[[Gives you a normal wedgie->crNormal]]
+](else:)[
+	`[Locked]` ~~Gives you a normal wedgie~~
+]}
+{(if: ($nerdValue >= 1))[
+	[[Pants you->crPants]]
+](else:)[
+	`[Locked]` ~~Pants you~~
+]}
+[[Do nothing->crNothing]]
+
+
+:: \ walkSchool {"position":"1125,925","size":"100,100"}
+
+
+
+:: MainMenu {"position":"650,700","size":"100,100"}
+Hello!
+
+Welcome to ''A Day at School''!
+
+This is a fun story that tests the Twine engine and how to use it. This is my first story with Twine and tried really hard.
+
+Have fun with this story. It changes depending on mutiple thing like chooses, outfit, etc
+
+[[Play the Story->The start]]
+
+
+:: The start {"position":"775,700","size":"100,100"}
+{(set: $currentWedgie to "none")
+(set: $prevWedgie to "no")
+What is your name?}
+(input-box:2bind $userName,"X==","")
+What is your bullies gender?  (cycling-link:bind $bully, "Male", "Female")*<- Click to change the people who bully you gender*
+(link: "Continue")[=
+
+*The Sun shines thought the window and you open your eyes to your alarm clock blarring*
+
+It takes a moment for you to adjust to the light and you sit up.
+(link: "Look at the alarm clock")[=
+Looking at the clock on your night stand (*Not like phones exiest and no one needs a night stand*) and it says:
+(text-colour:green)[(text-style:"bold","condense","blink")[7:24]]
+(text-style:"bold","superscript","blur")[Fuuuuuuuuuuu](text-style:"bold","blur")[uuuuuuuuuuuuuuuuu](text-style:"bold","subscript","blur")[uuuuuuuuuuuuuuuuuuuuuuck]
+(Link:"Continue")[=
+(if:$bully is "Male")[Your going to be late for school and Mike (*The resident bully who makes your life a living hell*) is not going to be happy because you have a project for first period that he needs. If you miss the start of the period and he doesn't get his project...]
+(else:)[Your going to be late for school and Sarah (*The resident bully who makes your life a living hell*) is not going to be happy because you have a project for first period that she needs. If you miss the start of the period and she doesn't get her project...]
+(Link:"You don't want to think about that...")[=
+(if:$bully is "Male")[The last time this happened was well... your underwear was not so under after he was done... (*You don't want to think about it but lets just say you had to buy new underwear*)]
+(else:)[The last time this happened was well... your underwear was not so under after she was done... (*You don't want to think about it but lets just say you had to buy new underwear*)]
+(link:"Turn off the alarm clock")[=
+*You slam your hand down on top of the alarm clock and it turns off. You jump out of bed and run to the mirror on the wall*
+
+[[Look into the mirror->mirrorStart]]
+
+
+:: bsAtomic {"position":"1525,600","size":"100,100"}
+{(if: $bully is "Male")[
+	*Matt approches you*
+](else:)[
+	*Savannah approches you*
+]}
+"Sup nerd" they say
+(link: "\"Hi...\"")[=
+"Hi..." *You say not understanding what is happening*
+{(if: $underwearNamed is "is")[
+	"So I noticed your $underwearWaistbandColor waistband sticking out your pants and I see you even have your name on them... how nerdy."
+](else:)[
+	"So I noticed your $underwearWaistbandColor waistband sticking out your pants."
+]}
+(link: "\"What?\"")[=
+{(if: $bully is "Male")[
+	Before you can react Matt grabs your waistband and gets a good grip. You freeze in fear as you feel his cold fingers on your lower back.
+](else:)[
+	Before you can react Savannah grabs your waistband and gets a good grip. You freeze in fear as you feel her cold fingers on your lower back.
+]}
+(link: "\"Wait wait...\"")[=
+"Wait wait..." *You start to beg* "Please not a wedgie."
+"But I bet you look so cute with your nerdy $underwearType shoved deep up your ass."
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+{(if: $bully is "Male")[
+	*Matt pulls hard on the underwear getting off the the ground slighlty in a dangling wedgie*
+](else:)[
+	*Savannah pulls hard on the underwear getting off the the ground slighlty in a dangling wedgie*
+]}
+{(set: $currentWedgie to "Dangling")
+(set: $prevWedgie to "yes")}
+(link: "\"aghhhh!\"")[=
+"aghhhh!" *You yell out in pain causing other students waiting at the bus to notice what is going on*
+{"Your such a fucking nerd, I mean your wearing $underwearBaseColor $underwearType with $underwearPattern on them... thats just asking for a wedgie fucking nerd. Your the 
+(if: $gender is "male")[
+	king
+](else:)[
+	queen
+]
+ of nerds."}
+{(if: $bully is "Male")[
+	*You notice mutiple boys laughing and taking picures. You feel like people won't forget this.*
+](else:)[
+	*You notice mutiple girls laughing and taking picures. You feel like people won't forget this.*
+]
+(set: $nerdValue to it + 15)
+(if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+]}
+
+(link: "*endure the wedgie*")[=
+{*You endure the wedgie* 
+(if: $bully is "Male")[
+	*as Matt pulls harder and starts to bounce you by your nerdy $underwearBaseColor $underwearType*
+](else:)[
+	*as Savannah pulls harder and starts to bounce you by your nerdy $underwearBaseColor $underwearType*
+](set: $currentWedgie to "Bouncing")}
+
+"How it's feeling nerd? Do you like being a Yo-Yo?"
+(link: "\"Ple... ple... please let go\"")[=
+"Ple... ple... please let go" *You manage to get out of as you feel like your being sawed in half*
+
+{As you say that you start to hear a group of 
+(if: $bully is "Male")[
+	guys
+](else:)[
+	girls
+]chanting "Atomic! Atomic! Atomic" as your underwear gets streched out more and more}
+{(if: $bully is "Male")[
+	*Matt looks around* "Looks like they want me to make it atomic and I can't leave them hanging"
+](else:)[
+	*Savannah looks around* "Looks like they want me to make it atomic and I can't leave them hanging"
+]}
+(link: "*Beg like the nerd you are*")[=
+"Please... don't give me an atomic... I'll do anything" *You say frantically trying anything to not be humilated further*
+{(if: $bully is "Male")[
+	*Matt pretends to think* "Hmmmmm.... na. You are the biggest nerd i have seen and you deserve this... atomic!"
+](else:)[
+	*Savannah pretends to think* "Hmmmmm.... na. You are the biggest nerd i have seen and you deserve this... atomic!"
+]}
+As they say atomic, they pull them right over your head and hook them under your chin. You desperately try to claw your $underwearBaseColor $underwearType with $underwearPattern off your head as you hear everyone laughing at you. Ther taking videos and picures and mocking you. No one will forget this.
+{(set: $nerdValue to it + 20)
+(set: $currentWedgie to "Chin Atomic")
+(set: $totalWedgies to it + 1)
+(if: $bully is "Male")[
+	(set: $wedgieList to it + " As you wait for the bus, Matt gives you a atomic wedgie hooked under your chin, utterly humilating you.")
+](else:)[
+	(set: $wedgieList to it + " As you wait for the bus, Savannah gives you a atomic wedgie hooked under your chin, utterly humilating you.")
+]}
+
+(link: "*Try to ask for help*")[=
+"Mhhhmmhhmmh" *You say thougt your underwear mask*
+You try to talk and ask for help but you can't make any words. As you try. you hear the bus pull up.
+{(if: $bully is "Male")[
+	*Matt pushes you onto the bus* "Looks like your ride is here nerd and you get to ride just like that"
+](else:)[
+	*Savannah pushes you onto the bus* "Looks like your ride is here nerd and you get to ride just like that"
+]}
+
+[[Forced onto the bus->onBus]]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+-->
+
+
+:: bsDangle {"position":"1525,725","size":"100,100"}
+{(if: $bully is "Male")[
+	*Matt approches you*
+](else:)[
+	*Savannah approches you*
+]}
+"Sup nerd" they say
+(link: "\"Hi...\"")[=
+"Hi..." *You say not understanding what is happening*
+{(if: $underwearNamed is "is")[
+	"So I noticed your $underwearWaistbandColor waistband sticking out your pants and I see you even have your name on them... how nerdy."
+](else:)[
+	"So I noticed your $underwearWaistbandColor waistband sticking out your pants."
+]}
+(link: "\"What?\"")[=
+{(if: $bully is "Male")[
+	Before you can react Matt grabs your waistband and gets a good grip. You freeze in fear as you feel his cold fingers on your lower back.
+](else:)[
+	Before you can react Savannah grabs your waistband and gets a good grip. You freeze in fear as you feel her cold fingers on your lower back.
+]}
+(link: "\"Wait wait...\"")[=
+"Wait wait..." *You start to beg* "Please not a wedgie."
+"But I bet you look so cute with your nerdy $underwearType shoved deep up your ass."
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+{(if: $bully is "Male")[
+	*Matt pulls hard on the underwear getting off the the ground slighlty in a dangling wedgie*
+](else:)[
+	*Savannah pulls hard on the underwear getting off the the ground slighlty in a dangling wedgie*
+]}
+{(set: $currentWedgie to "Dangling")
+(set: $prevWedgie to "yes")}
+(link: "\"aghhhh!\"")[=
+"aghhhh!" *You yell out in pain causing other students waiting at the bus to notice what is going on*
+"Your such a fucking nerd, I mean your wearing $underwearBaseColor $underwearType with $underwearPattern on them... thats just asking for a wedgie fucking nerd."
+{(if: $bully is "Male")[
+	*You notice mutiple boys laughing and taking picures. You feel like people won't forget this.*
+](else:)[
+	*You notice mutiple girls laughing and taking picures. You feel like people won't forget this.*
+]
+(set: $nerdValue to it + 15)
+(if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+]}
+
+(link: "*endure the wedgie*")[=
+*You endure the wedgie for what seem like forever as you try to get footing*
+
+"How it's feeling nerd? We're giving everyone a good show. Want me to let go?"
+(link: "\"Yes yes\"")[=
+"Yes yes" *You say in a panic*
+"Say how much of a nerd you are." *They say still holding you in the wedgie as you sway a bit*
+(link: "\"I'm a big nerd!\"")[=
+"I'm a big nerd!" *You say as everyone is looking at you seeing how pathatic you are most of them laughing*
+{(if: $bully is "Male")[
+	*Matt Finally lets go as your underwear snaps back to place and you fall to the floor*
+](else:)[
+	*Savannah Finally lets go as your underwear snaps back to place and you fall to the floor*
+]}
+{You stumble to get it and you try to fix them but they still are sticking out the back of your pants.
+(set: $currentWedgie to "Streched")
+(set: $underwearOut to "is")
+(set: $totalWedgies to it + 1)
+(if: $bully is "Male")[
+	(set: $wedgieList to it + " As you wait for the bus, Matt gives you a dangling wedgie humilating you.")
+](else:)[
+	(set: $wedgieList to it + " As you wait for the bus, Savannah gives you a dangling wedgie humilating you.")
+]}
+
+*You see the bus pull up*
+[[Board the bus->onBus]]
+
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+-->
+
+
+:: bsNormal {"position":"1525,850","size":"100,100"}
+{(if: $bully is "Male")[
+	*Matt approches you*
+](else:)[
+	*Savannah approches you*
+]}
+"Sup nerd" they say
+(link: "\"Hi...\"")[=
+"Hi..." *You say not understanding what is happening*
+{(if: $underwearNamed is "is")[
+	"So I noticed your $underwearWaistbandColor waistband sticking out your pants and I see you even have your name on them... how nerdy."
+](else:)[
+	"So I noticed your $underwearWaistbandColor waistband sticking out your pants."
+]}
+(link: "\"What?\"")[=
+{(if: $bully is "Male")[
+	Before you can react Matt grabs your waistband and gets a good grip. You freeze in fear as you feel his cold fingers on your lower back.
+](else:)[
+	Before you can react Savannah grabs your waistband and gets a good grip. You freeze in fear as you feel her cold fingers on your lower back.
+]}
+(link: "\"Wait wait...\"")[=
+"Wait wait..." *You start to beg* "Please not a wedgie."
+"But I bet you look so cute with your nerdy $underwearType shoved deep up your ass."
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+{(if: $bully is "Male")[
+	*Matt pulls hard on the underwear giving you a normal wedgie*
+](else:)[
+	*Savannah pulls hard on the underwear giving you a normal wedgie*
+]}
+{(set: $currentWedgie to "Normal")
+(set: $prevWedgie to "yes")}
+(link: "\"aghhhh!\"")[=
+"aghhhh!" *You yell out in pain causing other students waiting at the bus to notice what is going on*
+"Your such a fucking nerd, I mean your wearing $underwearBaseColor $underwearType with $underwearPattern on them... thats just asking for a wedgie fucking nerd"
+{(if: $bully is "Male")[
+	*You notice mutiple boys laughing and taking picures. You feel like people won't forget this.*
+](else:)[
+	*You notice mutiple girls laughing and taking picures. You feel like people won't forget this.*
+]
+(set: $nerdValue to it + 10)
+(if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+]}
+
+(link: "*endure the wedgie*")[=
+*You endure the wedgie for what seem like forever*
+
+"How it's feeling nerd? We're giving everyone a good show. Want me to let go?"
+(link: "\"Yes yes\"")[=
+"Yes yes" *You say in a panic*
+"Say how much of a nerd you are." *They say still holding you in the wedgie*
+(link: "\"I'm a big nerd!\"")[=
+"I'm a big nerd!" *You say as everyone is looking at you seeing how pathatic you are*
+{(if: $bully is "Male")[
+	*Matt Finally lets go as your underwear snaps back to place*
+](else:)[
+	*Savannah Finally lets go as your underwear snaps back to place*
+]}
+{You try to fix them but they still are sticking out the back of your pants.
+(set: $currentWedgie to "Streched")
+(set: $underwearOut to "is")
+(set: $totalWedgies to it + 1)
+(if: $bully is "Male")[
+	(set: $wedgieList to it + " As you wait for the bus, Matt gives you a normal wedgie.")
+](else:)[
+	(set: $wedgieList to it + " As you wait for the bus, Savannah gives you a normal wedgie.")
+]}
+
+*You see the bus pull up*
+[[Board the bus->onBus]]
+
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+-->
+
+
+:: bsNothing {"position":"1525,975","size":"100,100"}
+*They don't do anything as the bus arrives and you board the bus*
+
+[[Get on the bus->onBus]]
+
+
+:: characterDesc {"position":"1025,700","size":"100,100"}
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+-->
+{<!--cals the nerd value (0-100) and this changes some things that happen in the story, the mroe nerdy, the more humatied you get-->
+(set: $nerdValue to 0)
+(if: ($shirt is "t-shirt") or ($shirt is "blouse"))[
+	(set: $nerdValue to it + 0)
+](else-if:  ($shirt is "hoody") or ($shirt is "polo"))[
+	(set: $nerdValue to it + 5)
+](else-if: $shirt is "button up")[
+	(set: $nerdValue to it + 10)
+]
+
+(if: ($pants is "leggings") or ($pants is "jeans") or ($pants is "shorts"))[
+	(set: $nerdValue to it + 0)
+](else-if: ($pants is "skirt") or ($pants is "cargo shorts"))[
+	(set: $nerdValue to it + 5)
+](else-if: ($pants is "slacks"))[
+	(set: $nerdValue to it + 10)
+]
+
+(if: ($underwearBaseColor is "black") or ($underwearBaseColor is "grey") or ($underwearBaseColor is "beige"))[
+	(set: $nerdValue to it + 0)
+](else-if: ($underwearBaseColor is "blue") or ($underwearBaseColor is "green") or ($underwearBaseColor is "pink"))[
+	(set: $nerdValue to it + 5)
+](else-if: ($underwearBaseColor is "red") or ($underwearBaseColor is "orange") or ($underwearBaseColor is "yellow") or ($underwearBaseColor is "white"))[
+	(set: $nerdValue to it + 10)
+]
+
+(if: ($underwearType is "thong") or ($underwearType is "boyshorts"))[
+	(set: $nerdValue to it + 0)
+](else-if: ($underwearType is "briefs"))[
+	(set: $nerdValue to it + 5)
+](else-if: ($underwearType is "tighty whites") or ($underwearType is "granny panties"))[
+	(set: $nerdValue to it + 10)
+]
+
+(if: ($underwearWaistbandColor is "black") or ($underwearWaistbandColor is "grey") or ($underwearWaistbandColor is "beige"))[
+	(set: $nerdValue to it + 0)
+](else-if: ($underwearWaistbandColor is "blue") or ($underwearWaistbandColor is "green") or ($underwearWaistbandColor is "pink"))[
+	(set: $nerdValue to it + 5)
+](else-if: ($underwearWaistbandColor is "red") or ($underwearWaistbandColor is "orange") or ($underwearWaistbandColor is "yellow") or ($underwearWaistbandColor is "white"))[
+	(set: $nerdValue to it + 10)
+]
+
+(if: ($underwearPattern is "no pattern"))[
+	(set: $nerdValue to it + 0)
+](else-if: ($underwearPattern is "pok-a-dots"))[
+	(set: $nerdValue to it + 5)
+](else-if: ($underwearPattern is "flowers") or ($underwearPattern is "hearts") or ($underwearPattern is "chess pieces"))[
+	(set: $nerdValue to it + 10)
+](else-if: ($underwearPattern is "rockets") or ($underwearPattern is "rubberducks") or ($underwearPattern is "smiley faces") or ($underwearPattern is "Pokeballs") or ($underwearPattern is "Cars"))[
+	(set: $nerdValue to it + 15)
+](else-if: ($underwearPattern is "rainbows and unicorns") or ($underwearPattern is "frozen") or ($underwearPattern is "Cinderella") or ($underwearPattern is "Power Rangers"))[
+	(set: $nerdValue to it + 20)
+]
+
+(if: $underwearNamed is "is not")[
+	(set: $nerdValue to it + 0)
+](else:)[
+	(set: $nerdValue to it + 15)
+]
+
+(if: $underwearOut is "is not")[
+	(set: $nerdValue to it + 0)
+](else:)[
+	(set: $nerdValue to it + 15)
+]}
+*As you finish looking at yourself, you take one final look at yourself*
+
+You are wear a $shirtColor $shirt with $pantsColor $pants.
+{You do a quick spin to check out the rest of the outfit.
+(if:$underwearOut is "is")[
+	(if:$underwearNamed is "is")[
+    	As you do, you notice your $underwearBaseColor $underwearType with a $underwearWaistbandColor waistband is clearly visable sticking out the back of your pants. "$userName" is written on the waistband... such a nerd.
+    ](else:)[
+    	As you do, you notice your $underwearBaseColor $underwearType with $underwearWaistbandColor waistband is clearly visable sticking out the back of your pants.
+    ]
+](else:)[
+	You don't notice anything.
+]}
+Final Look: {
+(if: ($nerdValue is  0))[
+	normal
+](else-if: ($nerdValue >= 1) and ($nerdValue <= 25))[
+	little nerdy
+](else-if: ($nerdValue >= 26) and ($nerdValue <= 50))[
+	kinda nerdy
+](else-if: ($nerdValue >= 51) and ($nerdValue <= 75))[
+	nerd
+](else-if: ($nerdValue >= 76) and ($nerdValue <= 99))[
+	pathetic nerd
+](else:)[
+	total nerd
+]
+}
+
+(Link:"Continue")[=
+You check the time again: (text-colour:green)[(text-style:"bold","condense","blink")[7:34]]
+
+You need to make it to school and have a few ways of doing it. It doesn't matter what you choose, you just need to make it to school before first bell...
+
+*You think for a moment*
+{(if:$bully is "Male")[
+	[[Ask Your Dad for a ride to school -> tryCarRide]]
+](else:)[
+	[[Ask Your Mom for a ride to school -> tryCarRide]]
+]
+(set: $totalWedgies to 0)
+(set: $wedgieList to "")
+}
+[[Walk to the bus stop -> busStop]]
+[[Walk to school -> walkSchool]]
+
+
+:: crAtomic {"position":"1050,450","size":"100,100"}
+{(if: $bully is "Male")[
+	*He sees your $underwearWaistbandColor waistband sticking out
+	(if: $underwearNamed is "is")[
+		 and he notices your name "$userName" on the waistband
+    ]
+    *
+](else:)[
+	*She sees your $underwearWaistbandColor waistband sticking out
+	(if: $underwearNamed is "is")[
+		 and she notices your name "$userName" on the waistband
+    ]
+    *
+]}
+{(if: $bully is "Male")[
+	You freeze as you feel his hands grab your waistband...
+](else:)[
+	You freeze as you feel her hands grab your waistband...
+]}
+(link:"\"Wait please not a wedgie\"")[=
+"Wait please not a wedgie" *You say in a panic*
+{(if: $bully is "Male")[
+	"If not me, then who? I'm dying to see what a nerd like you is wearing..." *he says*
+](else:)[
+	"If not me, then who? I'm dying to see what a nerd like you is wearing..." *she says*
+]}
+(link:"\"Please don't\"")[=
+"Please don't" *You beg pathaticlly*
+{(if: $bully is "Male")[
+	"Do you know what time it is?" *he asks you*
+](else:)[
+	"Do you know what time it is?" *she asks you*
+]}
+(link:"\"I'll do anything\"")[=
+"I'll do anything" *as you continue to beg like a nerd*
+"It's ''Wedgie Time''"
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+"Aghhhhhhhhhhhhhh" *You cry out as you get a wedgie*
+{(if: $bully is "Male")[
+	"These are so pathatic. $underwearBaseColor with a $underwearWaistbandColor and it has $underwearPattern. You are just asking for a wedgie" *he says as he continues to pull*
+](else:)[
+	"These are so pathatic. $underwearBaseColor with a $underwearWaistbandColor waistband and it has $underwearPattern on them. You are just asking for a wedgie" *she says as she continues to pull*
+]}
+(link:"\"Please let go\"")[=
+"Please let go" *You say thought the pain*
+{(if: $bully is "Male")[
+	"Hmmm... no" *he pulls even harder as he starts to bounce you*
+    (set: $prevWedgie to "yes")
+    (set: $currentWedgie to "Bouncing")
+](else:)[
+	"Hmmm... no" *she pulls even harder as she starts to bounce you*
+    (set: $prevWedgie to "yes")
+    (set: $currentWedgie to "Bouncing")
+]}
+"Aghhhh, ohhhh, aaaaaahhhh" *You say as you get bounced by your pathatic underwear*
+{(if: $bully is "Male")[
+	"Man you are such a nerd I mean who wears underwear like this. Do you even know what underwear your wearing?" *He says as your underwear stretches more and more*
+](else:)[
+	"Man you are such a nerd I mean who wears underwear like this. Do you even know what underwear your wearing?" *she says as your underwear stretches more and more*
+]}
+(link: "\"Please stop\"")[=
+"Please stop" *You beg like the total nerd you are*
+*They think for a moment*
+{(if: $bully is "Male")[
+	"I really don't think you know how much of a nerd you are. I think you need a better reminder... can you say ''Atomic Wedgie''?" *He says as he pulls them over your head and hooks them under your nose in a atomic wedgie*
+    (set: $prevWedgie to "yes")
+    (set: $currentWedgie to "Nose Atomic")
+    (set: $totalWedgies to it + 1)
+    (set: $wedgieList to it + " When you asked for a car ride from your dad, he gave you an atomic wedgie hooked under your nose.")
+    (if: $nerdValue is 100)[
+    	"Hmmmm... you are such a nerd, it need something else..." *He grabs you pants and pulls them to your ankles*
+        "Perfect!" (set: $currentWedgie to "Panted Nose Atomic") (set: $wedgieList to it + " He also did pants you.")
+   ]
+](else:)[
+	"I really don't think you know how much of a nerd you are. I think you need a better reminder... can you say ''Atomic Wedgie''?" *she says as she pulls them over your head and hooks them under your nose in a atomic wedgie*
+    (set: $prevWedgie to "yes")
+    (set: $currentWedgie to "Nose Atomic")
+    (set: $wedgieList to it + " When you asked for a car ride from your mom, she gave you an atomic wedgie hooked under your nose.")
+    (if: $nerdValue is 100)[
+    	"Hmmmm... you are such a nerd, it need something else..." *She grabs you pants and pulls them to your ankles*
+        "Perfect!" (set: $currentWedgie to "Panted Nose Atomic") (set: $wedgieList to it + " She also did pants you.")
+   ]
+]}
+(link: "\"Aghhhh...\"")[=
+"Aghhhh..." *You scream out in your atomic wedgie*
+{(if: $bully is "Male")[
+	"Look at you the perfect nerd, you deserve this for being such a fucking nerd" *He says as he laughs at you*
+](else:)[
+	"Look at you the perfect nerd, you deserve this for being such a fucking nerd" *She says as she laughs at you*
+]}
+"Please... let me out. I'm stuck" *You say desperately trying to get out of your predicament*
+{(if: $bully is "Male")[
+	"I have to get to work, maybe don't be such a nerd next time" *He says as he leaves you stuck in your wedgie*
+](else:)[
+	"I have to get to work, maybe don't be such a nerd next time" *She says as she leaves you stuck in your wedgie*
+]}
+
+{So here you are, your $underwearBaseColor $underwearType with $underwearPattern pulled over your head and hooked under your nose in an atomic wedgie like the nerd you are.
+(if: $currentWedgie is "Panted Nose Atomic")[
+And lets not forget that you pants are around your ankles. How will you get of this perdictament?]}
+
+[[Try to pull them off your head->craPullOff]]
+[[Call your sister for help->craSisHelp]]
+[[Try to rip them->craRip]]
+
+
+:: crNormal {"position":"1300,450","size":"100,100"}
+{(if: $bully is "Male")[
+	*He sees your $underwearWaistbandColor waistband sticking out
+	(if: $underwearNamed is "is")[
+		 and he notices your name "$userName" on the waistband
+    ]
+    *
+](else:)[
+	*She sees your $underwearWaistbandColor waistband sticking out
+	(if: $underwearNamed is "is")[
+		 and she notices your name "$userName" on the waistband
+    ]
+    *
+]}
+{(if: $bully is "Male")[
+	You freeze as you feel his hands grab your waistband...
+](else:)[
+	You freeze as you feel her hands grab your waistband...
+]}
+(link:"\"Wait please not a wedgie\"")[=
+"Wait please not a wedgie" *You say in a panic*
+{(if: $bully is "Male")[
+	"If not me, then who? I'm dying to see what a nerd like you is wearing..." *he says*
+](else:)[
+	"If not me, then who? I'm dying to see what a nerd like you is wearing..." *she says*
+]}
+(link:"\"Please don't\"")[=
+"Please don't" *You beg pathaticlly*
+{(if: $bully is "Male")[
+	"Do you know what time it is?" *he asks you*
+](else:)[
+	"Do you know what time it is?" *she asks you*
+]}
+(link:"\"I'll do anything\"")[=
+"I'll do anything" *as you continue to beg like a nerd*
+"It's ''Wedgie Time''"
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+"Aghhhhhhhhhhhhhh" *You cry out as you get a wedgie*
+{(if: $bully is "Male")[
+	"These are so pathatic. $underwearBaseColor with a $underwearWaistbandColor and it has $underwearPattern. You are just asking for a wedgie" *he says as he continues to pull*
+](else:)[
+	"These are so pathatic. $underwearBaseColor with a $underwearWaistbandColor waistband and it has $underwearPattern on them. You are just asking for a wedgie" *she says as she continues to pull*
+]}
+(link:"\"Please let go\"")[=
+"Please let go" *You say thought the pain*
+{(if: $bully is "Male")[
+	"Hmmm... fine" *he lets go*
+](else:)[
+	"Hmmm... fine" *she lets go*
+]}
+"Get in the car and i'll take you to school"
+*You fix yourself and suprisnly your underwear is not sticking out of your pants*
+{(set: $underwearOut to "is not")
+(set: $prevWedgie to "yes")
+(set: $totalWedgies to it + 1)
+(if: $bully is "Male")[
+	(set: $wedgieList to it + " When you asked for a car ride from your dad, he gave you a normal wedgie but did drive you to school.")
+](else:)[
+	(set: $wedgieList to it + " When you asked for a car ride from your mom, she gave you a normal wedgie but did drive you to school.")
+]
+(set: $nerdValue to it - 15)
+(if: $nerdValue < 0)[
+	(set: $nerdValue to 0)
+]
+
+}
+[[Contiune to school->schoolStart]]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+-->
+
+
+:: crNothing {"position":"1550,450","size":"100,100"}
+*They change there minds and deside it is not worth it*
+
+You get in the car without issues and make it to school ok
+
+[[Continue->schoolStart]]
+
+
+:: crPants {"position":"1425,450","size":"100,100"}
+*You freeze as you feel your pants fall to your ankles*
+
+You look down and see your $underwearBaseColor $underwearType with $underwearPattern on them exposed.
+
+(link:"''*Contiune*''")[=
+{(if: $bully is "Male")[
+	*You hear your dad laughing behind you*
+](else:)[
+	*You hear your mom laughing behind you*
+]}
+"How did I raise such a nerd?"
+*You turn red as you try to cover yourself*
+"Your such a pathetic nerd. Who wear $underwearType."
+
+[[Pull them up fast->crpFast]]
+[[Attempt to pull them up->crpPull]]
+[[Leave the kitchen and head to the bathroom to pull up your pants->crpLeave]]
+
+
+:: crShoulder {"position":"1175,450","size":"100,100"}
+{(if: $bully is "Male")[
+	*He sees your $underwearWaistbandColor waistband sticking out
+	(if: $underwearNamed is "is")[
+		 and he notices your name "$userName" on the waistband
+    ]
+    *
+](else:)[
+	*She sees your $underwearWaistbandColor waistband sticking out
+	(if: $underwearNamed is "is")[
+		 and she notices your name "$userName" on the waistband
+    ]
+    *
+]}
+{(if: $bully is "Male")[
+	You freeze as you feel his hands grab your waistband...
+](else:)[
+	You freeze as you feel her hands grab your waistband...
+]}
+(link:"\"Wait please not a wedgie\"")[=
+"Wait please not a wedgie" *You say in a panic*
+{(if: $bully is "Male")[
+	"If not me, then who? I'm dying to see what a nerd like you is wearing..." *he says*
+](else:)[
+	"If not me, then who? I'm dying to see what a nerd like you is wearing..." *she says*
+]}
+(link:"\"Please don't\"")[=
+"Please don't" *You beg pathaticlly*
+{(if: $bully is "Male")[
+	"Do you know what time it is?" *he asks you*
+](else:)[
+	"Do you know what time it is?" *she asks you*
+]}
+(link:"\"I'll do anything\"")[=
+"I'll do anything" *as you continue to beg like a nerd*
+"It's ''Wedgie Time''"
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+"Aghhhhhhhhhhhhhh" *You cry out as you get a wedgie*
+{(if: $bully is "Male")[
+	"These are so pathatic. $underwearBaseColor with a $underwearWaistbandColor and it has $underwearPattern. You are just asking for a wedgie" *he says as he continues to pull*
+](else:)[
+	"These are so pathatic. $underwearBaseColor with a $underwearWaistbandColor waistband and it has $underwearPattern on them. You are just asking for a wedgie" *she says as she continues to pull*
+]}
+(link:"\"Please let go\"")[=
+"Please let go" *You say thought the pain*
+{(if: $bully is "Male")[
+	"Hmmm... maybe after this" *he pulls your arms thouhgt the legholes and gives you a shoulder wedgie* "perfect!"
+    (set: $prevWedgie to "yes")
+    (set: $currentWedgie to "shoulder")
+    (set: $totalWedgies to it + 1)
+    (set: $wedgieList to it + " When you asked for a car ride from your dad, he gave you a shoulder wedgie.")
+](else:)[
+	"Hmmm... maybe after this" *she pulls your arms thouhgt the legholes and gives you a shoulder wedgie* "perfect!"
+    (set: $prevWedgie to "yes")
+    (set: $currentWedgie to "shoulder")
+     (set: $totalWedgies to it + 1)
+     (set: $wedgieList to it + " When you asked for a car ride from your mom, she gave you a shoulder wedgie.")
+]}
+*You go to fix your underwear but them stop you*
+"If you want a ride from me, you have to stay like that for the car ride otherwise you can find another way to school."
+
+*You think for a moment*
+[[Agree to stay in the shoulder wedgie->schoolStart]]
+[[Don't Agree->crsDis]]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+-->
+
+
+:: craPullOff {"position":"1100,250","size":"100,100"}
+*As you wiggle about, you finally managed to get them off your head*
+
+You fix yourself as best as you can as your underwear is sticking out still
+{
+	(set: $currentWedgie to "none")
+    (set: $underwearOut to "is")
+    (set: $nerdValue to it + 15)
+    (if: $nerdValue > 100)[
+		(set: $nerdValue to 100)
+	]
+    (set: $wedgieList to it + " You managed to wiggle from from the atomic wedgie and looked for a differnt way to school.")
+}
+
+New plan, what would you like to do?
+
+[[Run to the bus stop -> busStop]]
+[[Walk to school -> walkSchool]]
+
+
+:: craRip {"position":"850,375","size":"100,100"}
+*You try to rip them off but you find out that your too weak to do so as it hurts too much*
+
+[[Try to pull them off your head->craPullOff]]
+
+
+:: craSisHelp {"position":"975,325","size":"100,100"}
+*You yell for your sister which you know is upstairs*
+"Hey! Help me! Please!"
+*You hear some footsteps as you hear your sister enter the room*
+"Oh my god $userName, fucking nerd" *She laughs at you* "Do you expect me to help you?"
+(link: "\"Please\"")[=
+"Please" *You beg*
+*She thinks for a moment*
+"I will help you under one condition; You admit how much of a fucking nerd you are for getting wedgied by... who?"
+{(if: $bully is "Male")[
+	"dad..." *You respond*
+    "You got wedgied by dad?! hahahahaha" *She laughs at you*
+](else:)[
+	"mom..." *You respond*
+    "You got wedgied by mom?! hahahahaha" *She laughs at you*
+]}
+*She composes herself*
+"anyway deal?"
+
+[[Deal->crasDeal]]
+[[No Deal->crasNoDeal]]
+
+
+:: crasDeal {"position":"1000,150","size":"100,100"}
+*She waits for your to say it*
+"I'm a nerd who gets wedgied by there mom and deserves it"
+
+*She laughts at you as you say it*
+"Ok, I'll help you out and i'll even drive you to school"
+
+*She pulls them off your head*
+"You really are a nerd, ill be in the car" *She says as she leaves you to fix yourself*
+{
+	(set: $currentWedgie to "none")
+    (set: $underwearOut to "is")
+    (set: $nerdValue to it + 15)
+    (if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+    (set: $wedgieList to it + " You got your sister to help you out by humiliating yourself but she will drive you to school.")
+]
+}
+*You fix yourself as best as you can but your underwear is still sticking out the back of your pants, you head to the car ready to go to school*
+
+[[Go to school->schoolStart]]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+-->
+
+
+:: crasNoDeal {"position":"875,150","size":"100,100"}
+*She laughs*
+"Ok suit yourself" *She says as she leaves*
+
+[[Try to pull them off your head->craPullOff]]
+[[Try to rip them->craRip]]
+
+
+:: crpFast {"position":"1625,300","size":"100,100"}
+{(if: $bully is "Male")[
+	You pull up yout pants fast before anymore embarrassment can be done from your own father no doubt
+](else:)[
+	You pull up yout pants fast before anymore embarrassment can be done from your own mother no doubt
+]}
+{As you walk to the car to go to school, you fail to realize your underwear is sticking out the back of your pants from the panting...
+(set: $underwearOut to "is")
+(set: $nerdyValue to it + 15)
+(if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+]
+(if: $bully is "Male")[
+	(set: $wedgieList to it + " When you asked for a car ride from your dad, he panted you but you got them up before anything else can be done.")
+](else:)[
+	(set: $wedgieList to it + " When you asked for a car ride from your mom, she panted you but you got them up before anything else can be done.")
+]
+}
+[[Continue to school->schoolStart]]
+
+
+:: crpLeave {"position":"1375,300","size":"100,100"}
+*You leave the kitchen and head to the bathroom*
+
+In there you fix your pants and make sure everything is in order and that your underwear is not sticking out.
+{
+(set: $underwearOut to "is not")
+(set: $nerdValue to it - 15)
+(if: $nerdValue < 0)[
+	(set: $nerdValue to 0)
+]
+(if: $bully is "Male")[
+	(set: $wedgieList to it + " When you asked for a car ride from your dad, he panted you but you left and fixed your pants.")
+](else:)[
+	(set: $wedgieList to it + " When you asked for a car ride from your mom, she panted you but you left and fixed your pants.")
+]
+}
+[[Make your way to school->schoolStart]]
+
+
+:: crpPull {"position":"1500,300","size":"100,100"}
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+-->
+*You deside to pull up your pants*
+{(if: $bully is "Male")[
+	(if: $underwearNamed is "is")[
+    	As you bend over to pull your pants up, you can't help but hear more snickering as your dad grabbing your waistband.
+        "Who writes there name on there underwear, you know what that means?"
+        *He says as you are frozen in fear*
+        "It means its... ''Wedgie Time''!"
+        (set: $currentWedgie to "Dangling")
+        (set: $prevWedgie to "yes")
+        (set: $nerdValue to it + 10)
+        (if: $nerdValue > 100)[
+        	(set: $nerdValue to 100)
+        ]
+    ](else:)[
+    	As you bend over to pull your pants up, you can't help but hear more snickering but manage to pull them up without issue.
+    ]
+](else:)[
+	(if: $underwearNamed is "is")[
+    	As you bend over to pull your pants up, you can't help but hear more snickering as your mom grabbing your waistband.
+        "Who writes there name on there underwear, you know what that means?"
+        *She says as you are frozen in fear*
+        "It means its... ''Wedgie Time''!"
+        (set: $currentWedgie to "Dangling")
+        (set: $prevWedgie to "yes")
+        (set: $totalWedgies to it + 1)
+        (set: $nerdValue to it + 10)
+        (if: $nerdValue > 100)[
+        	(set: $nerdValue to 100)
+        ]
+    ](else:)[
+    	As you bend over to pull your pants up, you can't help but hear more snickering but manage to pull them up without issue.
+    ]
+]}
+{(if: $currentWedgie is "Dangling")[
+	(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+]}
+{(if: $currentWedgie is "Dangling")[
+	"aaaggghhhh" *You can't help but yell out in pain as you feel your underwear shoot up your butt as you dangle by your underwear, your feet are barely touching the ground*
+]}
+{(if: $currentWedgie is "Dangling")[
+	(if: $underwearNamed is "is")[
+		"I can't belive how much of a nerd you are. You wrote "$userName" on the waistband of your underwear. This wedgie is well deserved."
+    ](else:)[
+    	"I can't belive how much of a nerd you are. This wedgie is well deserved."
+    ]
+	(if: $bully is "Male")[
+    	*He says as he holds you there like that*
+    ](else:)[
+    	*She says as she holds you there like that*
+    ]
+]}
+(link:"''*Contiune*''")[=
+(if: $prevWedgie is "yes")[
+"Please let me go" *You beg like the nerd you are*
+"Fine" *They finally let go* "I need to get you to school anyway"
+]
+{(set: $currentWedgie to "Stretched")
+You quickly fix yourself as you make your way to the car. 
+(if: $prevWedgie is "yes")[
+You fail to notice your underwear sticking out the back of your pants.
+(set: $underwearOut to "is")
+(set: $nerdValue to it + 15)
+(if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+]
+(if: $bully is "Male")[
+	(set: $wedgieList to it + " When you asked for a car ride from your dad, he panted you and then gave you a dangling wedgie.")
+](else:)[
+	(set: $wedgieList to it + " When you asked for a car ride from your mom, she panted you and then gave you a dangling wedgie.")
+]
+]}
+[[Contiune to school->schoolStart]]
+
+
+:: crsDis {"position":"1250,250","size":"100,100"}
+{*You fix your underwear but they are still sticking out the back of your pants*
+(set: $prevWedgie to "yes")
+(set: $currentWedgie to "Stretched")
+(set: $underwearOut to "is")
+(set: $nerdValue to it + 15)
+(if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+]
+(set: $wedgieList to it + " You decided to not keep the shoulder wedgie and find a differnt way to school.")}
+
+*You think about what to do*
+[[Run to the bus stop -> busStop]]
+[[Walk to school -> walkSchool]]
+
+
+:: mirrorStart {"position":"900,700","size":"100,100"}
+*You look into the Mirror and see yourself and you exmine yourself*
+<!-- color list : "Red", "Pink", "Purple", "Orange", "Yellow", "Blue", "Green", "Black", "Grey", "White", "Beige"-->
+<!--
+$bully
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$totalWedgies
+$wedgieList
+-->
+
+You are a (cycling-link:bind $gender, "female", "male")
+You are wearing a (cycling-link:bind $shirtColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $shirt, "t-shirt", "blouse", "polo", "button up", "hoody")
+You are wearing (cycling-link:bind $pantsColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $pants, "shorts", "cargo shorts", "jeans", "leggings", "slacks", "skirt")
+You have (cycling-link:bind $hairColor, "brown", "black", "blond", "red") hair
+You are wearing (cycling-link:bind $underwearBaseColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $underwearType, "thong", "boyshorts", "tighty whites", "briefs", "granny panties") with a (cycling-link:bind $underwearWaistbandColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") waistband
+You have (cycling-link:bind $underwearPattern, "no pattern", "rubberducks", "flowers", "rainbows and unicorns", "smiley faces", "rockets", "Pokeballs", "Frozen", "Cinderella", "pok-a-dots", "hearts", "Cars", "chess pieces", "Power Rangers") themed underwear pattern and your name (cycling-link:bind $underwearNamed, "is", "is not") on them
+Your underwear (cycling-link:bind $underwearOut, "is", "is not") sticking out the back of your pants
+
+[[Continue->characterDesc]]
+
+
+:: obBully {"position":"1850,525","size":"100,100"}
+
+
+
+:: obNerd {"position":"1900,975","size":"100,100"}
+{(if: $bully is "Male")[
+	*You sit next to the nerd. You know who they are. It is Scott dressed in a t-shirt and slacks.*
+](else:)[
+	*You sit next to the nerd. You know who they are. It is Meg dressed in a t-shirt and legging.*
+]}
+
+{(if: $bully is "Male")[
+	"Hey, Scott. Nice... day" *You say trying to strike up a conversation*
+](else:)[
+	"Hey, Meg. Nice... day" *You say trying to strike up a conversation*
+]}
+
+(link:"*Offer a polite smile*")[=
+*You smile at them as they look at you*
+(if: ($nerdValue is 100) and ($underwearOut is "is"))[
+	{(if: $bully is "Male")[
+		*Scott looks at you and see you look disveled* "Ummm... why are you talking to me?" *He scans you up and down and notices your underwear is sticking out* "Someone is having issues keeping there underwear... under."
+	](else:)[
+		*Meg looks at you and see you look disveled* "Ummm... why are you talking to me?" *She scans you up and down and notices your underwear is sticking out* "Someone is having issues keeping there underwear... under."
+	]}
+    
+    (link: "\"We... Well...\"")[=
+    "We... Well..." *You try to come up with something to say but you fail to come up with anything that won't make you sound like a nerd*
+    {(if: $bully is "Male")[
+		"I thought I was nerdy but here you are..." *Scott says*
+	](else:)[
+		"I thought I was nerdy but here you are..." *Meg says*
+	]}
+    "I'm not nerdy..." *You say weakly and pathaticlly*
+     {(if: $bully is "Male")[
+		"You are such a nerd that I can do this..." *Scott grabs your waistband*
+	](else:)[
+		"You are such a nerd that I can do this..." *Meg grabs your waistband*
+	]}
+    (text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+    "Aggghhhhh" *You scream as they give you a normal wedgie*
+    "Hahahaha.... look at your nerdy $underwearBaseColor $underwearType, and they even have $underwearPattern on them." *They say as they continue to pull hard*
+    
+    (link: "\"Let... g... go...\"")[=
+    "Let... g... go..." *You beg*
+    {(if: $bully is "Male")[
+		*Scott fake thinks for a bit* "hmmmmm... let me think... ok"
+	](else:)[
+		*Meg fake thinks for a bit* "hmmmmm... let me think... ok"
+	]}
+    Before you can react, they pull you underwear from the sides and gets them over your shoulders in a shoulder wedgie.
+    {(set: $totalWedgies to it + 1)
+    (set: $currentWedgie to "Shoulder Wedgie")
+    (if: $bully is "Male")[
+		(set: $wedgieList to it + " On the bus, Scott gives you a shoulder wedgie and forces you to keep it for the bus ride.")
+	](else:)[
+		(set: $wedgieList to it + " On the bus, Meg gives you a shoulder wedgie and forces you to keep it for the bus ride.")
+	]}
+    "aggghhhhhh" *You say in pain*
+    
+    {(if: $bully is "Male")[
+		"Now you must keep that until we get to school." *Scott threatens*
+	](else:)[
+		"Now you must keep that until we get to school." *Meg threatens*
+	]}
+    
+    (link:"\"Ok\"")[=
+    "Ok" *You say*
+    [[Go thought the rest of the bus ride without talking->schoolStart]]
+](else:)[
+	{(if: $bully is "Male")[
+		"Hey..." *Scott says in a neutral tone* 
+        (if: $prevWedgie is "yes")[
+        "I see you ran into some bullies today..." *Scott says noticing that you look disveled a bit and can tell you been wedgied today already* "didn't even make it on the bus."
+        ]
+        *Scott looks at you* "Look I really don't want to talk to you. Your... too nerdy for me."
+	](else:)[
+		"Hey..." *Meg says in a neutral tone*  
+        (if: $prevWedgie is "yes")[
+        "I see you ran into some bullies today..." *Meg says noticing that you look disveled a bit and can tell you been wedgied today already* "didn't even make it on the bus."
+	]
+    *Megs looks at you* "Look I really don't want to talk to you. Your... too nerdy for me." 
+]}
+[[Go thought the rest of the bus ride without talking->schoolStart]]
+]
+
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: obUnknown {"position":"1850,775","size":"100,100"}
+*You sit next to the person you do not know*
+
+"Hi..." *You say shyly*
+
+{(if: $bully is "Male")[
+He turns to look at you. "Hi." *He says coldly before looking back out the window*
+](else:)[
+She turns to look at you. "Hi." *Shee says coldly before looking back out the window*
+]}
+
+"My name is $userName. What is your?"
+
+{(if: $bully is "Male")[
+Without looking he says "Alex".
+](else:)[
+Without looking she says "Alex".
+]}
+[[Talk about trains->obuTrains]]
+[[Talk about the weather->obuWeather]]
+[[Say nothing for the rest of the bus ride->schoolStart]]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: obuTrains {"position":"2000,600","size":"100,100"}
+"Do you like trains?." *You say trying to start a conversation*
+
+"Trains... Trains?" {(if: $bully is "Male")[
+*He says looking back at you*
+](else:)[
+*She says looking back at you*
+]}
+"You really just asked me if i like trains? That is so nerdy" {(if: $bully is "Male")[
+*He says snickering*
+](else:)[
+*She says snickering*
+]
+}
+
+(link:"\"I'm just trying to have a nice conversation\"")[=
+"I'm just trying to have a nice conversation..." *You say being kinda pushy*
+
+"More like trying to be a nerd... maybe I should teach you not to be."  {(if: $bully is "Male")[
+(if: $underwearOut is "is")[
+*He says reaching towards your waistband*
+](else:)[
+*He says reaching towards the back of your $pants*
+]
+](else:)[
+(if: $underwearOut is "is")[
+*She says reaching towards your waistband*
+](else:)[
+*She says reaching towards the back of your $pants*
+]
+]}
+(link:"\"Wait... Please... Don't give me a wedgie?!\"")[=
+"Wait... Please... Don't give me a wedgie?!" *You say pathetically*
+"Oh the nerd is begging already..."{
+(if: $underwearOut is "is")[
+	(if: $bully is "Male")[
+    	*He says grabing your $underwearWaistbandColor waistband* "Besides, I must see the rest of your underwear after noticing your $underwearWaistbandColor waistband sticking out {
+        (if: $underwearNamed is "is")[
+        	and I noticed you wrote your name on your waistband... "$userName"... how nerdy. Your just begging for a wedgie"
+        ](else:)[
+         "
+        ]
+        }
+    ](else:)[
+    	*She says grabing your $underwearWaistbandColor waistband* "Besides, I must see the rest of your underwear after noticing your $underwearWaistbandColor waistband sticking out {
+        (if: $underwearNamed is "is")[
+        	and I noticed you wrote your name on your waistband... "$userName"... how nerdy. Your just begging for a wedgie"
+        ](else:)[
+         "
+        ]
+        }
+    ]
+](else:)[
+	{(if: $bully is "Male")[
+	*He says reaching into your $pants and grabing your waistband*
+    ](else:)[
+	*He says reaching into your $pants and grabing your waistband*
+	]}
+]}
+
+(link: "\"Wait please... no... wait!\"")[=
+"Wait please... no... wait!" *You say in a panic*
+{(if: $bully is "Male")[
+	"Too late" *He responds*
+    ](else:)[
+	"Too late" *She responds*
+	]}
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+"aghhhhh" *You scream out in pain your $underwearBaseColor $underwearType are pulled up hard*
+*Other people start to notice what is going on and start snickering and taking photos.*
+{(if: $bully is "Male")[
+		(if: $underwearPattern is "no pattern")[
+    		"Wow, your wearing $underwearBaseColor $underwearType... your a big fucking nerd... and deserve this wedgie!" *He says pulling harder on the underwear, your butt lifting off the seat a bit*
+        ](else:)[
+			"Wow, your wearing $underwearBaseColor $underwearType with $underwearPattern on them... your a big fucking nerd... and deserve this wedgie!" *He says pulling harder on the underwear, your butt lifting off the seat a bit*
+		]
+    ](else:)[
+    	(if: $underwearPattern is "no pattern")[
+    		"Wow, your wearing $underwearBaseColor $underwearType... your a big fucking nerd... and deserve this wedgie!" *She says pulling harder on the underwear, your butt lifting off the seat a bit*
+        ](else:)[
+			"Wow, your wearing $underwearBaseColor $underwearType with $underwearPattern on them... your a big fucking nerd... and deserve this wedgie!" *She says pulling harder on the underwear, your butt lifting off the seat a bit*
+		]
+    ]}
+
+(link: "\"Aghhhh... Please let go. Everyone is watching\"")[=
+"Aghhhh... Please let go. Everyone is watching" *You beg like the nerd you are*
+{(if: $bully is "Male")[
+	"Hmmmmm.. fine" *He lets go*
+](else:)[
+	"Hmmmmm.. fine" *She lets go*
+]}
+*The bus comes to a stop at the school as you fix your underwear. You try your best but your underwear waistband is sticking out after the wedgie*{
+        (set: $nerdValue to it + 25)
+		(if: $nerdValue > 100)[
+			(set: $nerdValue to 100)
+		]
+        (set: $prevWedgie to "yes")
+        (set: $totalWedgies to it + 1)
+        (set: $wedgieList to it + " On the Bus, Alex gave you a hard wedgie as people looked on.")
+        (set: $underwearOut to "is")
+        }
+[[Get off the bus->schoolStart]]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: obuWeather {"position":"2000,825","size":"100,100"}
+"The weather is nice today." *You say trying to start a conversation*
+
+"Its fine." {(if: $bully is "Male")[
+*He says looking back at you*
+](else:)[
+*She says looking back at you*
+]}
+"I don't really want to talk right now, your... kinda pathic."
+
+(link:"\"I'm just trying to have a nice conversation\"")[=
+"I'm just trying to have a nice conversation..." *You say being kinda pushy*
+{(if: $bully is "Male")[
+	(if: $underwearOut is "is")[
+		*He scans you up and down. He notices your $underwearWaistbandColor waistband... he gets an idea*
+    ](else:)[
+    	*He scans you up and down.*
+    ]
+](else:)[
+	(if: $underwearOut is "is")[
+		*She scans you up and down. She notices your $underwearWaistbandColor waistband sticking out... she gets an idea*
+    ](else:)[
+    	*She scans you up and down.*
+    ]
+]}
+(if: $bully is "Male")[
+	(if: $underwearOut is "is")[
+		"Do you want to play a game?" *He says with a sinner smile*
+        (link:"\"What game do you want to play?\"")[=
+        "What game do you want to play?" *You ask genually wanting to play*
+        "It's called EyeSpy, I'll go first. Eye Spy with my little eye something that is $underwearWaistbandColor. Want to make a guess?" *He says slowly reaching for your waistband*
+        "Ummmm.... that's a hard one." *You say in deep thought*
+        "It can be tricky, heres a hint , it's on this bus" *Inching ever closer to your waistband*
+        (link:"\I give up, what is it?\"")[=
+        "I give up, what is it?" *You say unaware of what he is refering too*
+        "Ok final hint." *You feel his cold finger grip your waistband* "I am holding it..."
+        (link:"\"Wait... please. Don't give me a wedgie!\"")[=
+        "Wait... please. Don't give me a wedgie!" *You beg pathetically*
+        (text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+   		"Ahhhh" *You scream as he gives you a wedgie*
+        {(if: $underwearNamed is "is")[
+       		 "Hahaha, oh my god you so pathtic. I mean your wearing $underwearBaseColor $underwearType and you even put your name on them." *He says pulling harder*
+        ] (else:) [
+         "Hahaha, oh my god you so pathtic. I mean your wearing $underwearBaseColor $underwearType" *He says pulling harder*
+        ]}
+        "Do you want to be let go?" *He ask keeping your $underwearType taunt*
+        (link:"\"Yes Yes Please!\"")[=
+        "Yes Yes Please"*You frantically say*
+        "Fine... I'm getting bored anyway" *He finally let's go*
+        "Now don't talk to me for the rest of the bus ride" *He says losing intrest in you*
+        
+        *You adjust your underwear the best you can but your waistband is still sticking out... oh well*{
+        (set: $nerdValue to it + 15)
+		(if: $nerdValue > 100)[
+			(set: $nerdValue to 100)
+		]
+        (set: $prevWedgie to "yes")
+        (set: $totalWedgies to it + 1)
+        (set: $wedgieList to it + " On the Bus, Alex gave you a normal wedgie.")
+        }
+        [[Go thought the rest of the bus ride without talking->schoolStart]]
+    ](else:)[
+    	"I said..." *He reaches into the front of you $pants and grabs the waistband of you underwear*
+        (link:"\"Wait... Please!\"")[=
+        "Wait... Please!" *You say in a panic*
+         (text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+   		"Ahhhh" *You scream as he gives you a melvin*
+        "I don't want to talk nerd!" *He hisses as she lets go* {
+        (set: $nerdValue to it + 15)
+		(if: $nerdValue > 100)[
+			(set: $nerdValue to 100)
+		]
+        (set: $prevWedgie to "yes")
+        (set: $totalWedgies to it + 1)
+        (set: $wedgieList to it + " On the Bus, Alex gave you a mevin.")
+        }
+        [[Go thought the rest of the bus ride without talking->schoolStart]]
+    ]
+](else:)[
+	(if: $underwearOut is "is")[
+		"Do you want to play a game?" *She says with a sinner smile*
+        (link:"\"What game do you want to play?\"")[=
+        "What game do you want to play?" *You ask genually wanting to play*
+        "It's called EyeSpy, I'll go first. Eye Spy with my little eye something that is $underwearWaistbandColor. Want to make a guess?" *She says slowly reaching for your waistband*
+        "Ummmm.... that's a hard one." *You say in deep thought*
+        "It can be tricky, heres a hint , it's on this bus" *Inching ever closer to your waistband*
+        (link:"\I give up, what is it?\"")[=
+        "I give up, what is it?" *You say unaware of what she is refering too*
+        "Ok final hint." *You feel her cold finger grip your waistband* "I am holding it..."
+        (link:"\"Wait... please. Don't give me a wedgie!\"")[=
+        "Wait... please. Don't give me a wedgie!" *You beg pathetically*
+        (text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+   		"Ahhhh" *You scream as she gives you a wedgie*
+        {(if: $underwearNamed is "is")[
+       		 "Hahaha, oh my god you so pathtic. I mean your wearing $underwearBaseColor $underwearType and you even put your name on them." *She says pulling harder*
+        ] (else:) [
+         "Hahaha, oh my god you so pathtic. I mean your wearing $underwearBaseColor $underwearType" *She says pulling harder*
+        ]}
+        "Do you want to be let go?" *She ask keeping your $underwearType taunt*
+        (link:"\"Yes Yes Please!\"")[=
+        "Yes Yes Please"*You frantically say*
+        "Fine... I'm getting bored anyway" *She finally let's go*
+        "Now don't talk to me for the rest of the bus ride" *She says losing intrest in you*
+        
+        *You adjust your underwear the best you can but your waistband is still sticking out... oh well*{
+        (set: $nerdValue to it + 15)
+		(if: $nerdValue > 100)[
+			(set: $nerdValue to 100)
+		]
+        (set: $prevWedgie to "yes")
+        (set: $totalWedgies to it + 1)
+        (set: $wedgieList to it + " On the Bus, Alex gave you a normal wedgie.")
+        }
+         [[Go thought the rest of the bus ride without talking->schoolStart]]
+   ](else:)[
+    	"I said..." *She reaches into the front of you $pants and grabs the waistband of you underwear and pulls*
+          (link:"\"Wait... Please!\"")[=
+          "Wait... Please!" *You say in a panic*
+         (text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+   		"Ahhhh" *You scream as she gives you a melvin*
+        "I don't want to talk nerd!" *She hisses as she lets go* {
+        (set: $nerdValue to it + 15)
+		(if: $nerdValue > 100)[
+			(set: $nerdValue to 100)
+		]
+        (set: $prevWedgie to "yes")
+        (set: $totalWedgies to it + 1)
+        (set: $wedgieList to it + " On the Bus, Alex gave you a mevin.")
+        }
+        [[Go thought the rest of the bus ride without talking->schoolStart]]
+    ]
+]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: onBus {"position":"1700,700","size":"100,100"}
+(if: $currentWedgie is "Chin Atomic")[
+	*You stumble onto the bus with your underwear over your head and stumple around trying to desperlly to find a seat*
+    (if: $nerdValue <= 50) [
+    	As you make your way to a seat, you somehow manage to find a seat and sit down without many issues. I mean, you do hear laughing and people taking picures and whispering but atleast your not totally humiliated...// right?//
+    ](else:)[
+    	As you make your way to a seat, you hear laughing and people taking picures and whispering but atleast your not totally humiliated...// right?//. Well as you think that, you feel your $pantsColor $pants get pulled down to your ankle and you hear the whole bus eurpt in laugher... now you are one big total nerd.
+		(set: $currentWedgie to "Panted Chin Atomic")    
+    	(link: "*try to pull them up*")[
+    		As you try to pull them up, you feel someone kick you and you fall to the floor and can't get up. No one helps you as the bus starts to make it way to school and you are humiliated and just want this day to be over.
+       {(set: $wedgieList to it + " On the bus, someone pants you and you fall to the floor and stay like that for the whole bus ride.")}
+        [[Finally make it to school->schoolStart]]
+    	]
+    ]
+](else:)[
+	*You enter the bus pretty self conscious and you see there are only a few seats left... fuck.*
+    You can sit next to a known bully who will no doubt humiliate you.
+    You can sit next to a person you do not know and so they are unpredictable.
+    You can sit next to a fellow nerd and that should be a safe bet... unless you are a total nerd.
+    [[Sit next to the bully->obBully]]
+    [[Sit next to the unknown->obUnknown]]
+    [[Sit next to the nerd->obNerd]]
+]
+<!--
+$bully
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: schoolStart {"position":"2400,500","size":"100,100"}
+

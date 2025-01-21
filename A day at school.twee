@@ -134,7 +134,7 @@ Nerd wherever they like."
 [[Do nothing->crNothing]]
 
 
-:: \ walkSchool {"position":"1175,1225","size":"100,100"}
+:: \ walkSchool {"position":"1200,1400","size":"100,100"}
 
 
 
@@ -173,7 +173,18 @@ Looking at the clock on your night stand (*Not like phones exiest and no one nee
 (else:)[The last time this happened was well... your underwear was not so under after she was done... (*You don't want to think about it but lets just say you had to buy new underwear*)]
 (link:"Turn off the alarm clock")[=
 *You slam your hand down on top of the alarm clock and it turns off. You jump out of bed and run to the mirror on the wall*
-
+{(if:$bully is "Male")[
+(set: $bullySubjectPronounUpper to "He")
+(set: $bullySubjectPronounLower to "he")
+(set: $bullyObjectPronounUpper to "Him")
+(set: $bullyObjectPronounLower to "him")
+](else:)[
+(set: $bullySubjectPronounUpper to "She")
+(set: $bullySubjectPronounLower to "she")
+(set: $bullyObjectPronounUpper to "Her")
+(set: $bullyObjectPronounLower to "her")
+]
+}
 [[Look into the mirror->mirrorStart]]
 
 
@@ -1202,7 +1213,7 @@ Your underwear (cycling-link:bind $underwearOut, "is", "is not") sticking out th
 [[Continue->characterDesc]]
 
 
-:: obBully {"position":"1850,525","size":"100,100"}
+:: obBully {"position":"1875,550","size":"100,100"}
 {(if: $bully is "male")[
 	*Against your better judgment and because there are no other spots, you sit next to a known bully... "John"*
     *As you sit down, he notice you*
@@ -1213,10 +1224,23 @@ Your underwear (cycling-link:bind $underwearOut, "is", "is not") sticking out th
     "Woh, nerd alert over here" *She say mocking you*
 ]
 ]}
-[[Telk them to knock off->obbKnock]]
-[[Laugh it off->obbOff]]
+{(if: ($nerdValue >= 75)  and ($prevWedgie is "yes"))[
+	[[Tell them to knock off->obbKnock]]
+](else:)[
+	`[Locked]` ~~Tell them to knock off~~
+]}
+{(if: ($nerdValue >= 25))[
+	[[Laugh it off->obbOff]]
+](else:)[
+	`[Locked]` ~~Laugh it off~~
+]}
+[[Do nothing for the whole ride-->schoolStart]]
 <!--
 $bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
 $userName
 $gender
 $shirt
@@ -1238,7 +1262,7 @@ $wedgieList
 -->
 
 
-:: obNerd {"position":"1850,975","size":"100,100"}
+:: obNerd {"position":"1850,1000","size":"100,100"}
 {(if: $bully is "Male")[
 	*You sit next to the nerd. You know who they are. It is Scott dressed in a t-shirt and slacks.*
 ](else:)[
@@ -1343,7 +1367,7 @@ $wedgieList
 -->
 
 
-:: obUnknown {"position":"1850,800","size":"100,100"}
+:: obUnknown {"position":"1850,775","size":"100,100"}
 *You sit next to the person you do not know*
 
 "Hi..." *You say shyly*
@@ -1361,8 +1385,16 @@ Without looking he says "Alex".
 ](else:)[
 Without looking she says "Alex".
 ]}
-[[Talk about trains->obuTrains]]
-[[Talk about the weather->obuWeather]]
+{(if: ($nerdValue >= 75)  and ($prevWedgie is "yes"))[
+	[[Talk about trains->obuTrains]]
+](else:)[
+	`[Locked]` ~~Talk about trains~~
+]}
+{(if: ($nerdValue >= 50))[
+	[[Talk about the weather->obuWeather]]
+](else:)[
+	`[Locked]` ~~Talk about the weather~~
+]}
 [[Say nothing for the rest of the bus ride->schoolStart]]
 <!--
 $bully
@@ -1387,15 +1419,142 @@ $wedgieList
 -->
 
 
-:: obbKnock {"position":"2000,450","size":"100,100"}
+:: obbKnock {"position":"2000,475","size":"100,100"}
+"Knock it off." *You try to say authority but it comes off as pathetic*
+"Oh... the nerd here think they can talk back." *$bullySubjectPronounUpper snare*
+(link:"\"I...I... Didn't m...mean it li...like that?!\"")[=
+"I...I... Didn't m...mean it li...like that?!" *You say desperately trying to backpedel*
+"Too late..." *$bullySubjectPronounUpper reachs for your waistband and pulls hard*
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+(link:"\"Aggghhhh!\"")[=
+"Aggghhhh!" *You scream out*
+"Haha... fucking nerd!" *The bully snares* "You think you can come here and try to tell me off?" *$bullySubjectPronounUpper says pulling harder*
+(link:"\"Pl...Please... Let go...\"")[=
+"Pl...Please... Let go..." *You say in a frantic pantic*
 
+"Hmmmmmmm" *$bullySubjectPronounUpper pertends to think for a bit* "here is what going to happen. I want you to chose." 
+(link:"\"Chose?\"")[=
+"Chose?" *You say confused*
+"Sense your not getting it... let me clarify. I can either finish this deserved wedgie with either an atomic or shoulder wedgie. The choose is yuors."
+(link:"\"Please... just let go.\"")[=
+"Please... just let go." *You say trying to plea with $bullyObjectPronounLower to let go*
+"Nope... chose or when we get to the school. You'll be the flag for everyone to see."
+
+{(if: ($nerdValue >= 100))[
+	[[Be stubborn and don't pick->schoolStartFlagpole]]
+](else:)[
+	`[Locked]` ~~Be stubborn and don't pick~~
+]}
+[[Pick the atomic->obbkAtomic]]
+[[Pick the shoulder->obbkShoulder]]
+<!--
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
 
 
 :: obbOff {"position":"2000,600","size":"100,100"}
+*You give a timidity laugh hoping that the'll stop*
+
+{(if: $bully is "male")[
+"Your going to laugh at me?" *John says getting a mad*
+](else:)[
+"Your going to laugh at me?" *Meg says getting a mad*
+]}
+(link:"\"What? N...No, I'm...\"")[=
+"What? N...No, I'm..." *You attempt to stumble out a explanation*
+{(if: $underwearOut is "is")[
+Before you can even react $bullySubjectPronounLower grabs your exsposed $underwearWaistbandColor waistband and pull hard into a normal wedgie lifting you off the seat a bit.
+](else:)[
+Before you can even react $bullySubjectPronounLower reaches into your $pants and grabs $underwearWaistbandColor waistband and pull hard into a normal wedgie lifting you off the seat a bit.
+]}
+"aaaagggghhhh" *You manage to let out as your $underwearBaseColor $underwearType shoot out of your $pants*
+
+"Wow... what a fucking nerd. You really are pathetic... this is almost wasted on someone like you... almost" *$bullySubjectPronounUpper says pulling harder*
+
+(link:"\"I'm n...not a ne...nerd\"")[=
+"I'm n...not a ne...nerd" *You say thought the pain*
+"Not a nerd? Not a nerd?!" *$bullySubjectPronounUpper exmines your $underwearType*
+{(if: $underwearPattern is "no pattern")[
+"Let's recap shall we" *$bullySubjectPronounUpper says still holding you aloft* "You are wearing $underwearBaseColor $underwearType with a $underwearWaistbandColor waistband... you are going to "sit" here and tell me there not nerdy?"
+](else:)[
+"Let's recap shall we" *$bullySubjectPronounUpper says still holding you aloft* "You are wearing $underwearBaseColor $underwearType with $underwearPattern theming and a $underwearWaistbandColor waistband... you are going to "sit" here and tell me there not nerdy?"
+]}
+(link:"\"Pl...Please...\"")[=
+"Pl...Please..." *You muster*
+*$bullySubjectPronounUpper finally lets go* "Fine... but only because i'm in a good mood. Now shut up for the rest of the bus ride and you'll be fine."
+*You pick your wedgie and manage to get your underwear fully inside your pants*{
+        (set: $nerdValue to it + 25)
+		(if: $nerdValue > 100)[
+			(set: $nerdValue to 100)
+		]
+        (set: $prevWedgie to "yes")
+        (set: $totalWedgies to it + 1)
+        (if: $bully is "male")[
+			(set: $wedgieList to it + " On the Bus, John gave you a hard wedgie lifting you off the seat.")
+        ](else:)[
+			(set: $wedgieList to it + " On the Bus, Meg gave you a hard wedgie lifting you off the seat.")
+		]
+        (set: $underwearOut to "is not")
+        }
+[[Sit quietly for the rest of the bus ride->schoolStart]]
+<!--
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: obbkAtomic {"position":"2150,300","size":"100,100"}
 
 
 
-:: obuTrains {"position":"2000,750","size":"100,100"}
+:: obbkShoulder {"position":"2150,425","size":"100,100"}
+
+
+
+:: obuTrains {"position":"2000,725","size":"100,100"}
 "Do you like trains?." *You say trying to start a conversation*
 
 "Trains... Trains?" {(if: $bully is "Male")[
@@ -1520,7 +1679,7 @@ $wedgieList
 -->
 
 
-:: obuWeather {"position":"2000,875","size":"100,100"}
+:: obuWeather {"position":"2000,850","size":"100,100"}
 "The weather is nice today." *You say trying to start a conversation*
 
 "Its fine." {(if: $bully is "Male")[
@@ -1722,4 +1881,8 @@ $wedgieList
 
 
 :: schoolStart {"position":"2400,500","size":"100,100"}
+
+
+
+:: schoolStartFlagpole {"position":"2400,375","size":"100,100"}
 

@@ -1,0 +1,40 @@
+Ending Values for Wedgies:
+- Chin Atomic : Walk
+- Shoulder : Walk
+- Panted Chin Atomic : Ground
+
+All Varables:
+<!--
+$modeOfTransport
+$bullyName
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+Template Stuff:
+{(if: ($nerdValue >= 75)  and ($prevWedgie is "yes"))[
+	[[Talk about trains->obuTrains]]
+](else:)[
+	`[Locked]` ~~Talk about trains~~
+]}

@@ -1,12 +1,24 @@
 Walk to School Branch Ideas
-- Standard route
+- !Standard route
 	- Come in contact with some bullies
-	- Not too hard wedgies
-		- Normal, meveils, etc
-- Quick route thought woods
+	- !Try to hide from them
+		- Based on nerd value if fail or not
+		- !If found gives you dangling and pants you
+		- !If not found - Makes it to school ok
+	- !Walk past them
+		- They see you and stop you
+			- !Normal wedgie
+			- !Melvin wedgie
+			- !Pants you
+				- !If your name is one your underwear, atomic. Otherwise, they push you over.
+- !Quick route thought woods
 	- Find bullies
-	- Hard wedgies
-		- Atomic, Hanging, Atomic Hanging
-		- Might make you late to school
-- Bike
-	- No issues
+	-! Tries to sneak past them 
+		-Hard wedgies
+			- !Atomic, !Hanging, !Atomic Hanging
+			- The Hanging will make you late to school
+			- If nerd value is high, they pants you as well
+	- !Walk past them
+		- They stop you
+		- !Normal, !Hanging
+		- The Hanging will make you late to school

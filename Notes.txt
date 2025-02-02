@@ -3,6 +3,19 @@ Ending Values for Wedgies:
 - Shoulder : Walk
 - Panted Chin Atomic : Ground
 
+Ending Values for Transport:
+- Bike
+- Bus
+- Car
+- Walk
+
+Text Color:
+(text-colour:<Color>)[<Text>]
+- Descrption of Scene - Green: #2b8a3e
+- Important notes in descrption - pink: #fb00ff
+- Dialog - Orange: #f28a0a
+- Locked Option - Red: #a12500
+
 All Varables:
 <!--
 $modeOfTransport

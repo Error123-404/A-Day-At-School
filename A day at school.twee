@@ -68,7 +68,7 @@ $underwearOut
 $currentWedgie
 $prevWedgie
 -->
-{(if:$bully is "Male")[
+(text-colour:#2b8a3e)[{(if:$bully is "Male")[
 	*A car ride would work well as you can make it to the school on time but... your dad might not be too happy about it*
 ](else:)[
 	*A car ride would work well as you can make it to the school on time but... your mom might not be too happy about it*
@@ -80,99 +80,139 @@ $prevWedgie
 	As you walk into the kitchen you see your dad, he is making coffee and leaning against the counter reading a news paper. He don't notice it you.
 ](else:)[
 	As you walk into the kitchen you see your mom, she is making coffee and leaning against the counter reading a magazene. She don't notice it you.
-]}
+]}]
 
 (Link:"*Muster up the courage to speak*")[=
-*You speak up*
-{(if:$bully is "Male")[
+(text-colour:#2b8a3e)[*You speak up*]
+(text-colour:#f28a0a)[{(if:$bully is "Male")[
 	"Dad, can you drive me to school?"
 ](else:)[
 	"Mom, can you drive me to school?"
-]}
-{(if:$bully is "Male")[
+]}]
+(text-colour:#2b8a3e)[{(if:$bully is "Male")[
 	*He turns to look at you, not happy about it*
 ](else:)[
 	*She turns to look at you, not happy about it*
-]}
+]}]
 {(if:$bully is "Male")[
-	"Of course" *He says with mock happiness* "I'll drive 
+	(text-colour:#f28a0a)["Of course"] (text-colour:#2b8a3e)[*He says with mock happiness*] (text-colour:#f28a0a)["I'll drive ]
 ](else:)[
-	"Of course" *She says with mock happiness* "I'll drive 
+	(text-colour:#f28a0a)["Of course"] (text-colour:#2b8a3e)[*She says with mock happiness*] (text-colour:#f28a0a)["I'll drive ]
 ]
-(if:$gender is "male")[
+(text-colour:#f28a0a)[(if:$gender is "male")[
 	Mr. 
 ](else:)[
 	Ms. 
 ]
-Nerd wherever they like."
+Nerd wherever they like."]
 }
 
 (Link:"*Thank them for understanding*")[=
-*You speak up again*
-"Thank you for willing to drive me to school" *You say without understanding they not happy*
-*You turn to walk away and they have an idea to teach you a lession*
+(text-colour:#2b8a3e)[*You speak up again*]
+(text-colour:#f28a0a)["Thank you for willing to drive me to school"] (text-colour:#2b8a3e)[*You say without understanding they not happy*
+*You turn to walk away and they have an idea to teach you a lesson*]
+
 {(if: ($underwearOut is "is") and ($nerdValue >= 76))[
 	[[Gives you an atomic wedgie->crAtomic]]
 ](else:)[
-	`[Locked]` ~~Gives you an atomic wedgie~~
+	(text-colour:#a12500)[''`[Locked]` ~~Gives you an atomic wedgie~~'']
 ]}
 {(if: ($underwearOut is "is") and ($nerdValue >= 51))[
 	[[Gives you a shoulder wedgie->crShoulder]]
 ](else:)[
-	`[Locked]` ~~Gives you an shoulder wedgie~~
+	(text-colour:#a12500)[''`[Locked]` ~~Gives you an shoulder wedgie~~'']
 ]}
 {(if: $underwearOut is "is")[
 	[[Gives you a normal wedgie->crNormal]]
 ](else:)[
-	`[Locked]` ~~Gives you a normal wedgie~~
+	(text-colour:#a12500)[''`[Locked]` ~~Gives you a normal wedgie~~'']
 ]}
 {(if: ($nerdValue >= 1))[
 	[[Pants you->crPants]]
 ](else:)[
-	`[Locked]` ~~Pants you~~
+	(text-colour:#a12500)[''`[Locked]` ~~Pants you~~'']
 ]}
 [[Do nothing->crNothing]]
 
 
-:: \ walkSchool {"position":"1200,1400","size":"100,100"}
+:: \ walkSchool {"position":"1200,1300","size":"100,100"}
+(text-colour:#2b8a3e)[*You decide the best course of action is to walk to school. As you exit your house ready to go to school, you think for a moment*
 
+*You can stick to the (text-colour:#fb00ff)[''standard route''] which takes you on the main roads to school. It should be safe from bullies but you never know.*
+
+*You can take the shortcut (text-colour:#fb00ff)[''through the woods''], it should be a little faster and no one normally takes it but you never know what could happen.*
+
+*You could take your (text-colour:#fb00ff)[''bike''] to school. This would guarantee that you would make it to school without anyone stopping you... or worst.*]
+
+[[Take the standard route->walkS]]
+[[Take the route through the woods->walkW]]
+[[Take your bike to school->walkB]]
+<!--
+$modeOfTransport
+$bullyName
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
 
 
 :: MainMenu {"position":"650,700","size":"100,100"}
-Hello!
+(text-colour:#ff6f00)[''A Day at School'']
 
-Welcome to ''A Day at School''!
+(text-colour:#2b8a3e)[This is a (text-colour:#fb00ff)[nsfw wedgie-based interactive story] where players navigate a school day filled with choices and encounters.
 
-This is a fun story that tests the Twine engine and how to use it. This is my first story with Twine and tried really hard.
-
-Have fun with this story. It changes depending on mutiple thing like chooses, outfit, etc
+I tried really hard making this story so have fun with it and let me know how I did.]
 
 [[Play the Story->The start]]
 
 
 :: The start {"position":"775,700","size":"100,100"}
-{(set: $currentWedgie to "none")
+(text-colour:#2b8a3e)[{(set: $currentWedgie to "none")
 (set: $prevWedgie to "no")
 What is your name?}
-(input-box:2bind $userName,"X==","")
-What is your bullies gender?  (cycling-link:bind $bully, "Male", "Female")*<- Click to change the people who bully you gender*
+(text-colour:#ffffff)[(input-box:2bind $userName,"X==","")]
+What is your bullies gender?]  (cycling-link:bind $bully, "Male", "Female")(text-colour:#fb00ff)[* <- Click to change the people who bully you gender*]
+
 (link: "Continue")[=
+(text-colour:#2b8a3e)[*The Sun shines thought the window and you open your eyes to your alarm clock blarring*
 
-*The Sun shines thought the window and you open your eyes to your alarm clock blarring*
+It takes a moment for you to adjust to the light and you sit up.]
 
-It takes a moment for you to adjust to the light and you sit up.
 (link: "Look at the alarm clock")[=
-Looking at the clock on your night stand (*Not like phones exiest and no one needs a night stand*) and it says:
+(text-colour:#2b8a3e)[Looking at the clock on your night stand (*Not like phones exiest and no one needs a night stand*) and it says:]
 (text-colour:green)[(text-style:"bold","condense","blink")[7:24]]
-(text-style:"bold","superscript","blur")[Fuuuuuuuuuuu](text-style:"bold","blur")[uuuuuuuuuuuuuuuuu](text-style:"bold","subscript","blur")[uuuuuuuuuuuuuuuuuuuuuuck]
+(text-colour:#2b8a3e)[(text-style:"bold","superscript","blur")[Fuuuuuuuuuuu](text-style:"bold","blur")[uuuuuuuuuuuuuuuuu](text-style:"bold","subscript","blur")[uuuuuuuuuuuuuuuuuuuuuuck]]
+
 (Link:"Continue")[=
-(if:$bully is "Male")[Your going to be late for school and Mike (*The resident bully who makes your life a living hell*) is not going to be happy because you have a project for first period that he needs. If you miss the start of the period and he doesn't get his project...]
-(else:)[Your going to be late for school and Sarah (*The resident bully who makes your life a living hell*) is not going to be happy because you have a project for first period that she needs. If you miss the start of the period and she doesn't get her project...]
+(text-colour:#2b8a3e)[(if:$bully is "Male")[Your going to be late for school and Mike (*The resident bully who makes your life a living hell*) is not going to be happy because you have a project for first period that he needs. If you miss the start of the period and he doesn't get his project...]
+(else:)[Your going to be late for school and Sarah (*The resident bully who makes your life a living hell*) is not going to be happy because you have a project for first period that she needs. If you miss the start of the period and she doesn't get her project...]]
+
 (Link:"You don't want to think about that...")[=
-(if:$bully is "Male")[The last time this happened was well... your underwear was not so under after he was done... (*You don't want to think about it but lets just say you had to buy new underwear*)]
-(else:)[The last time this happened was well... your underwear was not so under after she was done... (*You don't want to think about it but lets just say you had to buy new underwear*)]
+(text-colour:#2b8a3e)[(if:$bully is "Male")[The last time this happened was well... your underwear was not so under after he was done... (*You don't want to think about it but lets just say you had to buy new underwear*)]
+(else:)[The last time this happened was well... your underwear was not so under after she was done... (*You don't want to think about it but lets just say you had to buy new underwear*)]]
+
 (link:"Turn off the alarm clock")[=
-*You slam your hand down on top of the alarm clock and it turns off. You jump out of bed and run to the mirror on the wall*
+(text-colour:#2b8a3e)[*You slam your hand down on top of the alarm clock and it turns off. You jump out of bed and run to the mirror on the wall*]
 {(if:$bully is "Male")[
 (set: $bullySubjectPronounUpper to "He")
 (set: $bullySubjectPronounLower to "he")
@@ -517,7 +557,7 @@ $currentWedgie
 $prevWedgie
 $nerdValue
 -->
-{<!--cals the nerd value (0-100) and this changes some things that happen in the story, the mroe nerdy, the more humatied you get-->
+{<!--cals the nerd value (0-100) and this changes some things that happen in the story, the more nerdy, the more humatied you get-->
 (set: $nerdValue to 0)
 (if: ($shirt is "t-shirt") or ($shirt is "blouse"))[
 	(set: $nerdValue to it + 0)
@@ -582,22 +622,22 @@ $nerdValue
 ](else:)[
 	(set: $nerdValue to it + 15)
 ]}
-*As you finish looking at yourself, you take one final look at yourself*
+(text-colour:#2b8a3e)[*As you finish getting ready, you take one final look at yourself*
 
 You are wear a $shirtColor $shirt with $pantsColor $pants.
 {You do a quick spin to check out the rest of the outfit.
 (if:$underwearOut is "is")[
 	(if:$underwearNamed is "is")[
-    	As you do, you notice your $underwearBaseColor $underwearType with a $underwearWaistbandColor waistband is clearly visable sticking out the back of your pants. "$userName" is written on the waistband... such a nerd.
+    	As you do, you notice your $underwearBaseColor $underwearType with a $underwearWaistbandColor waistband is clearly visable sticking out the back of your $pants. "$userName" is written on the waistband... such a nerd.
     ](else:)[
-    	As you do, you notice your $underwearBaseColor $underwearType with $underwearWaistbandColor waistband is clearly visable sticking out the back of your pants.
+    	As you do, you notice your $underwearBaseColor $underwearType with $underwearWaistbandColor waistband is clearly visable sticking out the back of your $pants..
     ]
 ](else:)[
 	You don't notice anything.
 ]}
-Final Look: {
+Final Look:] (text-colour:#fb00ff)[{
 (if: ($nerdValue is  0))[
-	normal
+	...normal
 ](else-if: ($nerdValue >= 1) and ($nerdValue <= 25))[
 	little nerdy
 ](else-if: ($nerdValue >= 26) and ($nerdValue <= 50))[
@@ -609,14 +649,15 @@ Final Look: {
 ](else:)[
 	total nerd
 ]
-}
+}]
 
 (Link:"Continue")[=
-You check the time again: (text-colour:green)[(text-style:"bold","condense","blink")[7:34]]
+(text-colour:#2b8a3e)[You check the time again:] (text-colour:green)[(text-style:"bold","condense","blink")[7:34]]
 
-You need to make it to school and have a few ways of doing it. It doesn't matter what you choose, you just need to make it to school before first bell...
+(text-colour:#2b8a3e)[You need to make it to school and have a few ways of doing it. It doesn't matter what you choose, you just need to make it to school before first bell...
 
-*You think for a moment*
+*You think for a moment*]
+
 {(if:$bully is "Male")[
 	[[Ask Your Dad for a ride to school -> tryCarRide]]
 ](else:)[
@@ -1235,7 +1276,7 @@ $wedgieList
 
 
 :: mirrorStart {"position":"900,700","size":"100,100"}
-*You look into the Mirror and see yourself and you exmine yourself*
+(text-colour:#2b8a3e)[*You look into the Mirror and see yourself and you exmine yourself*]
 <!-- color list : "Red", "Pink", "Purple", "Orange", "Yellow", "Blue", "Green", "Black", "Grey", "White", "Beige"-->
 <!--
 $bully
@@ -1255,13 +1296,13 @@ $totalWedgies
 $wedgieList
 -->
 
-You are a (cycling-link:bind $gender, "female", "male")
-You are wearing a (cycling-link:bind $shirtColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $shirt, "t-shirt", "blouse", "polo", "button up", "hoody")
-You are wearing (cycling-link:bind $pantsColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $pants, "shorts", "cargo shorts", "jeans", "leggings", "slacks", "skirt")
-You have (cycling-link:bind $hairColor, "brown", "black", "blond", "red") hair
-You are wearing (cycling-link:bind $underwearBaseColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $underwearType, "thong", "boyshorts", "tighty whites", "briefs", "granny panties") with a (cycling-link:bind $underwearWaistbandColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") waistband
-You have (cycling-link:bind $underwearPattern, "no pattern", "rubberducks", "flowers", "rainbows and unicorns", "smiley faces", "rockets", "Pokeballs", "Frozen", "Cinderella", "pok-a-dots", "hearts", "Cars", "chess pieces", "Power Rangers") themed underwear pattern and your name (cycling-link:bind $underwearNamed, "is", "is not") on them
-Your underwear (cycling-link:bind $underwearOut, "is", "is not") sticking out the back of your pants
+(text-colour:#2b8a3e)[You are a] (cycling-link:bind $gender, "female", "male")
+(text-colour:#2b8a3e)[You are wearing a] (cycling-link:bind $shirtColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $shirt, "t-shirt", "blouse", "polo", "button up", "hoody")
+(text-colour:#2b8a3e)[You are wearing] (cycling-link:bind $pantsColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $pants, "shorts", "cargo shorts", "jeans", "leggings", "slacks", "skirt")
+(text-colour:#2b8a3e)[You have] (cycling-link:bind $hairColor, "brown", "black", "blond", "red") (text-colour:#2b8a3e)[hair]
+(text-colour:#2b8a3e)[You are wearing] (cycling-link:bind $underwearBaseColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $underwearType, "thong", "boyshorts", "tighty whites", "briefs", "granny panties") (text-colour:#2b8a3e)[with a] (cycling-link:bind $underwearWaistbandColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (text-colour:#2b8a3e)[waistband]
+(text-colour:#2b8a3e)[You have] (cycling-link:bind $underwearPattern, "no pattern", "rubberducks", "flowers", "rainbows and unicorns", "smiley faces", "rockets", "Pokeballs", "Frozen", "Cinderella", "pok-a-dots", "hearts", "Cars", "chess pieces", "Power Rangers") (text-colour:#2b8a3e)[themed underwear pattern and your name] (cycling-link:bind $underwearNamed, "is", "is not") (text-colour:#2b8a3e)[on them]
+(text-colour:#2b8a3e)[Your underwear] (cycling-link:bind $underwearOut, "is", "is not") (text-colour:#2b8a3e)[sticking out the back of your... ummm well you know]
 
 [[Continue->characterDesc]]
 
@@ -2079,6 +2120,7 @@ $wedgieList
 
 :: schoolStart {"position":"2400,500","size":"100,100"}
 <!--
+$modeOfTransport
 $bullyName
 $bully
 $bullySubjectPronounUpper
@@ -2189,3 +2231,45 @@ $nerdValue
 $totalWedgies
 $wedgieList
 -->
+
+
+:: walkB {"position":"1400,1400","size":"100,100"}
+*You hope onto your bike and start pedaling to the school*
+(set: $modeOfTransport to "Bike")
+[[Continue to school->schoolStart]]
+
+
+:: walkS {"position":"1400,1150","size":"100,100"}
+(text-colour:#2b8a3e)[*You decided the best way to make to school ok without an trouble is take the standard route*]
+
+<!--(text-colour:#c0f)+(bg:black)[Your Text Here]
+$modeOfTransport
+$bullyName
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: walkW {"position":"1400,1275","size":"100,100"}
+

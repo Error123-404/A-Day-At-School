@@ -4,7 +4,6 @@ Walk to School Branch Ideas
 	- !Try to hide from them
 		- Based on nerd value if fail or not
 		- !If found gives you dangling and pants you
-		- !If not found - Makes it to school ok
 	- !Walk past them
 		- They see you and stop you
 			- !Normal wedgie

@@ -49,7 +49,7 @@ You make it to the bus stop after a short walk and you stand and wait on your ph
 [[Does nothing->bsNothing]]
 
 
-:: \ tryCarRide {"position":"1175,600","size":"100,100"}
+:: \ tryCarRide {"position":"1225,425","size":"100,100"}
 <!--
 $bully
 $userName
@@ -135,7 +135,7 @@ Nerd wherever they like."]
 [[Do nothing->crNothing]]
 
 
-:: \ walkSchool {"position":"1200,1300","size":"100,100"}
+:: \ walkSchool {"position":"1200,1475","size":"100,100"}
 (text-colour:#2b8a3e)[*You decide the best course of action is to walk to school. As you exit your house ready to go to school, you think for a moment*
 
 *You can stick to the (text-colour:#fb00ff)[''standard route''] which takes you on the main roads to school. It should be safe from bullies but you never know.*
@@ -670,7 +670,7 @@ Final Look:] (text-colour:#fb00ff)[{
 [[Walk to school -> walkSchool]]
 
 
-:: crAtomic {"position":"1050,450","size":"100,100"}
+:: crAtomic {"position":"1100,275","size":"100,100"}
 {(if: $bully is "Male")[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is "is")[
@@ -777,7 +777,7 @@ And lets not forget that you pants are around your ankles. How will you get of t
 [[Try to rip them->craRip]]
 
 
-:: crNormal {"position":"1300,475","size":"100,100"}
+:: crNormal {"position":"1350,300","size":"100,100"}
 {(if: $bully is "Male")[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is "is")[
@@ -864,7 +864,7 @@ $prevWedgie
 -->
 
 
-:: crNothing {"position":"1575,475","size":"100,100"}
+:: crNothing {"position":"1625,300","size":"100,100"}
 *They change there minds and deside it is not worth it*
 
 You get in the car without issues and make it to school ok
@@ -872,7 +872,7 @@ You get in the car without issues and make it to school ok
 [[Continue->schoolStart]]
 
 
-:: crPants {"position":"1450,450","size":"100,100"}
+:: crPants {"position":"1500,275","size":"100,100"}
 *You freeze as you feel your pants fall to your ankles*
 
 You look down and see your $underwearBaseColor $underwearType with $underwearPattern on them exposed.
@@ -892,7 +892,7 @@ You look down and see your $underwearBaseColor $underwearType with $underwearPat
 [[Leave the kitchen and head to the bathroom to pull up your pants->crpLeave]]
 
 
-:: crShoulder {"position":"1175,450","size":"100,100"}
+:: crShoulder {"position":"1225,275","size":"100,100"}
 {(if: $bully is "Male")[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is "is")[
@@ -976,7 +976,7 @@ $prevWedgie
 -->
 
 
-:: craPullOff {"position":"1125,275","size":"100,100"}
+:: craPullOff {"position":"1175,100","size":"100,100"}
 *As you wiggle about, you finally managed to get them off your head*
 
 You fix yourself as best as you can as your underwear is sticking out still
@@ -996,13 +996,13 @@ New plan, what would you like to do?
 [[Walk to school -> walkSchool]]
 
 
-:: craRip {"position":"850,375","size":"100,100"}
+:: craRip {"position":"900,200","size":"100,100"}
 *You try to rip them off but you find out that your too weak to do so as it hurts too much*
 
 [[Try to pull them off your head->craPullOff]]
 
 
-:: craSisHelp {"position":"975,300","size":"100,100"}
+:: craSisHelp {"position":"1025,125","size":"100,100"}
 *You yell for your sister which you know is upstairs*
 "Hey! Help me! Please!"
 *You hear some footsteps as you hear your sister enter the room*
@@ -1025,7 +1025,7 @@ New plan, what would you like to do?
 [[No Deal->crasNoDeal]]
 
 
-:: crasDeal {"position":"1025,125","size":"100,100"}
+:: crasDeal {"position":"1075,0","size":"100,100"}
 *She waits for your to say it*
 {(if: $bully is "female") [
 "I'm a nerd who gets wedgied by there mom and deserves it"
@@ -1071,7 +1071,7 @@ $prevWedgie
 -->
 
 
-:: crasNoDeal {"position":"875,175","size":"100,100"}
+:: crasNoDeal {"position":"925,0","size":"100,100"}
 *She laughs*
 "Ok suit yourself" *She says as she leaves*
 
@@ -1079,7 +1079,7 @@ $prevWedgie
 [[Try to rip them->craRip]]
 
 
-:: crpFast {"position":"1675,325","size":"100,100"}
+:: crpFast {"position":"1725,150","size":"100,100"}
 {(if: $bully is "Male")[
 	You pull up yout pants fast before anymore embarrassment can be done from your own father no doubt
 ](else:)[
@@ -1101,7 +1101,7 @@ $prevWedgie
 [[Continue to school->schoolStart]]
 
 
-:: crpLeave {"position":"1375,300","size":"100,100"}
+:: crpLeave {"position":"1425,125","size":"100,100"}
 *You leave the kitchen and head to the bathroom*
 
 In there you fix your pants and make sure everything is in order and that your underwear is not sticking out.
@@ -1121,7 +1121,7 @@ In there you fix your pants and make sure everything is in order and that your u
 [[Make your way to school->schoolStart]]
 
 
-:: crpPull {"position":"1525,300","size":"100,100"}
+:: crpPull {"position":"1575,125","size":"100,100"}
 <!--
 $bully
 $userName
@@ -1216,7 +1216,7 @@ You fail to notice your underwear sticking out the back of your pants.
 [[Contiune to school->schoolStart]]
 
 
-:: crsDis {"position":"1250,300","size":"100,100"}
+:: crsDis {"position":"1300,125","size":"100,100"}
 {*You fix your underwear but they are still sticking out the back of your pants*
 (set: $prevWedgie to "yes")
 (set: $currentWedgie to "Stretched")
@@ -2233,16 +2233,32 @@ $wedgieList
 -->
 
 
-:: walkB {"position":"1400,1400","size":"100,100"}
-*You hope onto your bike and start pedaling to the school*
+:: walkB {"position":"1400,1800","size":"100,100"}
+(text-colour:#2b8a3e)[*You hope onto your bike and start pedaling to the school*]
 (set: $modeOfTransport to "Bike")
 [[Continue to school->schoolStart]]
 
 
-:: walkS {"position":"1400,1150","size":"100,100"}
-(text-colour:#2b8a3e)[*You decided the best way to make to school ok without an trouble is take the standard route*]
+:: walkS {"position":"1400,1325","size":"100,100"}
+(text-colour:#2b8a3e)[*You decided the best way to make to school ok without an trouble is take the standard route*
 
-<!--(text-colour:#c0f)+(bg:black)[Your Text Here]
+As you walk down the street, you take a look arouns. You see cars passing by, the sun is shining and there is a nice breeze going on. You get to the first intersect that you have to cross, you wait for the light and walk through with no issues. After about 5 min, you see the second intersetion.]{
+(if: $bully is "Female")[
+(set: $bullyName to "Jessica")
+](else:)[
+(set: $bullyName to "Kevin")
+]}
+(link:"Look closer")[=
+(text-colour:#2b8a3e)[As you look closer, your heart drops. You see a few people standing waiting in the crosswalk and to your horror, you see $bullyName...
+
+$bullySubjectPronounUpper makes your life a living hell all the time. You have to think fast because otherwise... well lets not think about that.]
+
+(link: "Look around")[=
+(text-colour:#2b8a3e)[You look around and see near the sidewalk down by the crossing is a bush, it looks thick enought to hide you until $bullyName crosses the street. Other than that, the only other option is to walk and stand in the small crowd and hope $bullySubjectPronounLower doesn't see you.]
+
+[[Hide in the bush->walkSH]]
+[[Stand in the small crowd->walkSC]]
+<!--
 $modeOfTransport
 $bullyName
 $bully
@@ -2271,5 +2287,92 @@ $wedgieList
 -->
 
 
-:: walkW {"position":"1400,1275","size":"100,100"}
+:: walkSC {"position":"1600,1500","size":"100,100"}
+
+
+
+:: walkSH {"position":"1600,1250","size":"100,100"}
+(text-colour:#2b8a3e)[*You decide to hide behind the bush as that should work... right?*
+
+You make your way to the bush and hide behind it. You feel like you are pretty hidden and should be ok.]
+
+{(if: $nerdValue >= 75)[
+[[Look around->walkSHN]]
+](else:)[
+[[Look around->walkSHG]]
+]}
+
+<!--
+$modeOfTransport
+$bullyName
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: walkSHG {"position":"1725,1125","size":"100,100"}
+(text-colour:#2b8a3e)[You peek your head above the bush, it looks like no one sees you... you should be good. You duck your head back down and wait for the signal that they cross the street.]
+
+(link:"wait")[=
+(text-colour:#2b8a3e)[After was seems for an enturity, you hear the sound of the crosswalk allowing people to cross. You wait until you no longer hear the sound and peek your head out. No one is waiting anymore.]
+
+(link:"go and wait by the crosswalk")[=
+(text-colour:#2b8a3e)[You get out from your hiding spot and go wait for the crosswalk to ativate again. After a few minutes, it does and you cross the street fine.]
+(set: $modeOfTransport to "Walk")
+[[Walk to school without any incidences->schoolStart]]
+<!--
+$modeOfTransport
+$bullyName
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: walkSHN {"position":"1725,1250","size":"100,100"}
+
+
+
+:: walkW {"position":"1400,1675","size":"100,100"}
 

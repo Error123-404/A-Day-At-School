@@ -1,9 +1,6 @@
 Walk to School Branch Ideas
 - !Standard route
 	- Come in contact with some bullies
-	- !Try to hide from them
-		- Based on nerd value if fail or not
-		- !If found gives you dangling and pants you
 	- !Walk past them
 		- They see you and stop you
 			- !Normal wedgie

@@ -15,6 +15,7 @@ Text Color:
 - Important notes in descrption - pink: #fb00ff
 - Dialog - Orange: #f28a0a
 - Locked Option - Red: #a12500
+- Debug color - Yellow: #fcec03
 
 All Varables:
 <!--

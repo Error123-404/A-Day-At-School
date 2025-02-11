@@ -13,6 +13,9 @@ A day at school
 
 
 :: \ busStop {"position":"1325,750","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: busStop] [Nerd Value:` $nerdValue`]`]
+]}
 *You decide the best course of action is to head to the bus stop and get on the bus*
 
 You walk to the bus stop and, luckly, no one see you.
@@ -68,6 +71,9 @@ $underwearOut
 $currentWedgie
 $prevWedgie
 -->
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: tryCarRide] [Nerd Value:` $nerdValue`]`]
+]}
 (text-colour:#2b8a3e)[{(if:$bully is "Male")[
 	*A car ride would work well as you can make it to the school on time but... your dad might not be too happy about it*
 ](else:)[
@@ -136,6 +142,9 @@ Nerd wherever they like."]
 
 
 :: \ walkSchool {"position":"1200,1475","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSchool] [Nerd Value:` $nerdValue`]`]
+]}
 (text-colour:#2b8a3e)[*You decide the best course of action is to walk to school. As you exit your house ready to go to school, you think for a moment*
 
 *You can stick to the (text-colour:#fb00ff)[''standard route''] which takes you on the main roads to school. It should be safe from bullies but you never know.*
@@ -176,17 +185,24 @@ $wedgieList
 -->
 
 
-:: MainMenu {"position":"650,700","size":"100,100"}
-(text-colour:#ff6f00)[''A Day at School'']
+:: MainMenu {"position":"500,700","size":"100,100"}
+{(set: $debug to True)}(text-colour:#ff6f00)[''A Day at School'']
 
 (text-colour:#2b8a3e)[This is a (text-colour:#fb00ff)[nsfw wedgie-based interactive story] where players navigate a school day filled with choices and encounters.
 
 I tried really hard making this story so have fun with it and let me know how I did.]
 
+{(if: $debug is True)[
+[[Play the Story->debugStart]]
+](else:)[
 [[Play the Story->The start]]
+]}
 
 
 :: The start {"position":"775,700","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: The start]`]
+]}
 (text-colour:#2b8a3e)[{(set: $currentWedgie to "none")
 (set: $prevWedgie to "no")
 What is your name?}
@@ -230,6 +246,9 @@ It takes a moment for you to adjust to the light and you sit up.]
 
 
 :: bsAtomic {"position":"1525,600","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: bsAtomic] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "Male")[
 	*Matt approches you*
 ](else:)[
@@ -350,6 +369,9 @@ $prevWedgie
 
 
 :: bsDangle {"position":"1525,725","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: bsDangle] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "Male")[
 	*Matt approches you*
 ](else:)[
@@ -441,6 +463,9 @@ $prevWedgie
 
 
 :: bsNormal {"position":"1525,850","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: bsNormal] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "Male")[
 	*Matt approches you*
 ](else:)[
@@ -532,12 +557,83 @@ $prevWedgie
 
 
 :: bsNothing {"position":"1525,975","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: bsNothing] [Nerd Value:` $nerdValue`]`]
+]}
 *They don't do anything as the bus arrives and you board the bus*
 
 [[Get on the bus->onBus]]
 
 
+:: charDescDebug {"position":"1025,575","size":"100,100"}
+{(if:$bully is "Male")[
+(set: $bullySubjectPronounUpper to "He")
+(set: $bullySubjectPronounLower to "he")
+(set: $bullyObjectPronounUpper to "Him")
+(set: $bullyObjectPronounLower to "him")
+](else:)[
+(set: $bullySubjectPronounUpper to "She")
+(set: $bullySubjectPronounLower to "she")
+(set: $bullyObjectPronounUpper to "Her")
+(set: $bullyObjectPronounLower to "her")
+]
+(set: $modeOfTransport to "unknown")
+(set: $nerdValue to (num: it))}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: characterDescDebug]`]
+]}
+(text-colour:#2b8a3e)[*As you finish getting ready, you take one final look at yourself*
+
+You are wear a $shirtColor $shirt with $pantsColor $pants.
+{You do a quick spin to check out the rest of the outfit.
+(if:$underwearOut is "is")[
+	(if:$underwearNamed is "is")[
+    	As you do, you notice your $underwearBaseColor $underwearType with a $underwearWaistbandColor waistband is clearly visable sticking out the back of your $pants. "$userName" is written on the waistband... such a nerd.
+    ](else:)[
+    	As you do, you notice your $underwearBaseColor $underwearType with $underwearWaistbandColor waistband is clearly visable sticking out the back of your $pants..
+    ]
+](else:)[
+	You don't notice anything.
+]}
+Final Look:] (text-colour:#fb00ff)[{
+(if: ($nerdValue is  0))[
+	...normal (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else-if: ($nerdValue >= 1) and ($nerdValue <= 25))[
+	little nerdy (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else-if: ($nerdValue >= 26) and ($nerdValue <= 50))[
+	kinda nerdy (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else-if: ($nerdValue >= 51) and ($nerdValue <= 75))[
+	nerd (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else-if: ($nerdValue >= 76) and ($nerdValue <= 99))[
+	pathetic nerd (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else:)[
+	total nerd (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+]
+}]
+
+(Link:"Continue")[=
+(text-colour:#2b8a3e)[You check the time again:] (text-colour:green)[(text-style:"bold","condense","blink")[7:34]]
+
+(text-colour:#2b8a3e)[You need to make it to school and have a few ways of doing it. It doesn't matter what you choose, you just need to make it to school before first bell...
+
+*You think for a moment*]
+
+{(if:$bully is "Male")[
+	[[Ask Your Dad for a ride to school -> tryCarRide]]
+](else:)[
+	[[Ask Your Mom for a ride to school -> tryCarRide]]
+]
+(set: $totalWedgies to 0)
+(set: $wedgieList to "")
+}
+[[Walk to the bus stop -> busStop]]
+[[Walk to school -> walkSchool]]
+
+
 :: characterDesc {"position":"1025,700","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: characterDesc]`]
+]}
 <!--
 $bully
 $userName
@@ -671,6 +767,9 @@ Final Look:] (text-colour:#fb00ff)[{
 
 
 :: crAtomic {"position":"1100,275","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crAtomic] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "Male")[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is "is")[
@@ -778,6 +877,9 @@ And lets not forget that you pants are around your ankles. How will you get of t
 
 
 :: crNormal {"position":"1350,300","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crNormal] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "Male")[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is "is")[
@@ -865,6 +967,9 @@ $prevWedgie
 
 
 :: crNothing {"position":"1625,300","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crNothing] [Nerd Value:` $nerdValue`]`]
+]}
 *They change there minds and deside it is not worth it*
 
 You get in the car without issues and make it to school ok
@@ -873,6 +978,9 @@ You get in the car without issues and make it to school ok
 
 
 :: crPants {"position":"1500,275","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene:crPants] [Nerd Value:` $nerdValue`]`]
+]}
 *You freeze as you feel your pants fall to your ankles*
 
 You look down and see your $underwearBaseColor $underwearType with $underwearPattern on them exposed.
@@ -893,6 +1001,9 @@ You look down and see your $underwearBaseColor $underwearType with $underwearPat
 
 
 :: crShoulder {"position":"1225,275","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crShoulder] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "Male")[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is "is")[
@@ -977,6 +1088,9 @@ $prevWedgie
 
 
 :: craPullOff {"position":"1175,100","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: craPullOff] [Nerd Value:` $nerdValue`]`]
+]}
 *As you wiggle about, you finally managed to get them off your head*
 
 You fix yourself as best as you can as your underwear is sticking out still
@@ -997,12 +1111,18 @@ New plan, what would you like to do?
 
 
 :: craRip {"position":"900,200","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: craRip] [Nerd Value:` $nerdValue`]`]
+]}
 *You try to rip them off but you find out that your too weak to do so as it hurts too much*
 
 [[Try to pull them off your head->craPullOff]]
 
 
 :: craSisHelp {"position":"1025,125","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: craSisHelp] [Nerd Value:` $nerdValue`]`]
+]}
 *You yell for your sister which you know is upstairs*
 "Hey! Help me! Please!"
 *You hear some footsteps as you hear your sister enter the room*
@@ -1026,6 +1146,9 @@ New plan, what would you like to do?
 
 
 :: crasDeal {"position":"1075,0","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crasDeal] [Nerd Value:` $nerdValue`]`]
+]}
 *She waits for your to say it*
 {(if: $bully is "female") [
 "I'm a nerd who gets wedgied by there mom and deserves it"
@@ -1072,6 +1195,9 @@ $prevWedgie
 
 
 :: crasNoDeal {"position":"925,0","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crasNoDeal] [Nerd Value:` $nerdValue`]`]
+]}
 *She laughs*
 "Ok suit yourself" *She says as she leaves*
 
@@ -1080,6 +1206,9 @@ $prevWedgie
 
 
 :: crpFast {"position":"1725,150","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crpFast] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "Male")[
 	You pull up yout pants fast before anymore embarrassment can be done from your own father no doubt
 ](else:)[
@@ -1102,6 +1231,9 @@ $prevWedgie
 
 
 :: crpLeave {"position":"1425,125","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crpLeave] [Nerd Value:` $nerdValue`]`]
+]}
 *You leave the kitchen and head to the bathroom*
 
 In there you fix your pants and make sure everything is in order and that your underwear is not sticking out.
@@ -1141,6 +1273,9 @@ $currentWedgie
 $prevWedgie
 $nerdValue
 -->
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crpPull] [Nerd Value:` $nerdValue`]`]
+]}
 *You deside to pull up your pants*
 {(if: $bully is "Male")[
 	(if: $underwearNamed is "is")[
@@ -1217,6 +1352,9 @@ You fail to notice your underwear sticking out the back of your pants.
 
 
 :: crsDis {"position":"1300,125","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crsDis] [Nerd Value:` $nerdValue`]`]
+]}
 {*You fix your underwear but they are still sticking out the back of your pants*
 (set: $prevWedgie to "yes")
 (set: $currentWedgie to "Stretched")
@@ -1232,7 +1370,59 @@ You fail to notice your underwear sticking out the back of your pants.
 [[Walk to school -> walkSchool]]
 
 
+:: debugModification {"position":"625,475","size":"100,100"}
+(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: debugModification]`]
+
+(text-color:#2b8a3e)[Welcome to the debug menu. Please edit varable as you would like and then choose a starting place.]
+
+(text-color:#2b8a3e)[General Info]
+(text-color:#2b8a3e)[-----------------------------------------------]
+(text-colour:#2b8a3e)[What is your name?]
+(text-colour:#2b8a3e)[(input-box:2bind $userName,"X==","")]
+(text-colour:#2b8a3e)[Bullies gender: ] (cycling-link:bind $bully, "Male", "Female")
+(text-colour:#2b8a3e)[Your gender: ] (cycling-link:bind $gender, "female", "male")
+(text-colour:#2b8a3e)[Shirt: ] (cycling-link:bind $shirtColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $shirt, "t-shirt", "blouse", "polo", "button up", "hoody")
+(text-colour:#2b8a3e)[Pants: ] (cycling-link:bind $pantsColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $pants, "shorts", "cargo shorts", "jeans", "leggings", "slacks", "skirt")
+(text-colour:#2b8a3e)[Hair Color: ] (cycling-link:bind $hairColor, "brown", "black", "blond", "red")
+(text-colour:#2b8a3e)[Underwear: ] (cycling-link:bind $underwearBaseColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (cycling-link:bind $underwearType, "thong", "boyshorts", "tighty whites", "briefs", "granny panties") (text-colour:#2b8a3e)[with a] (cycling-link:bind $underwearWaistbandColor, "red", "pink", "purple", "orange", "yellow", "blue", "green", "black", "grey", "white", "beige") (text-colour:#2b8a3e)[waistband]
+(text-colour:#2b8a3e)[You have] (cycling-link:bind $underwearPattern, "no pattern", "rubberducks", "flowers", "rainbows and unicorns", "smiley faces", "rockets", "Pokeballs", "Frozen", "Cinderella", "pok-a-dots", "hearts", "Cars", "chess pieces", "Power Rangers") (text-colour:#2b8a3e)[themed underwear pattern and your name] (cycling-link:bind $underwearNamed, "is", "is not") (text-colour:#2b8a3e)[on them]
+(text-colour:#2b8a3e)[Your underwear] (cycling-link:bind $underwearOut, "is", "is not") (text-colour:#2b8a3e)[sticking out the back of your... ummm well you know]
+(text-color:#2b8a3e)[-----------------------------------------------]
+
+
+(text-color:#2b8a3e)[Other Info]
+(text-color:#2b8a3e)[-----------------------------------------------]
+(text-colour:#2b8a3e)[Previous Wedgie:] (cycling-link:bind $prevWedgie, "no", "yes")
+(text-colour:#2b8a3e)[Nerd Value: (dropdown: 2bind $nerdValue,"0","10","20","30","40","50","60","70","80","90","100")]
+(text-color:#2b8a3e)[-----------------------------------------------]
+
+
+(text-color:#2b8a3e)[Where would you like to go?]
+[[Normal Start->charDescDebug]] (text-color:#fcec03)[ - This brings you to the normal start with some modifications so you can start the game like normal]
+
+(text-color:#2b8a3e)[Jump points:]
+[[Car Ride Start-> tryCarRide]] (text-color:#fcec03)[ - This brings you to the start of the car ride branch]
+[[Bus Ride Start-> busStop]] (text-color:#fcec03)[ - This brings you to the start of the bus ride branch]
+[[ - On Bus Start->onBus]] (text-color:#fcec03)[ - This brings you to where you board the bus]
+[[Walk to School Start-> walkSchool]] (text-color:#fcec03)[ - This brings you to the start of the walk to school branch]
+[[ - Walk to School using the standard route->walkS]] (text-color:#fcec03)[ - This brings you to walking to school using the standard route]
+[[ - Walk to School using the wood route->walkS]] (text-color:#fcec03)[ - This brings you to walking to school using the wood route]
+
+
+:: debugStart {"position":"625,600","size":"100,100"}
+(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: debugStart]`]
+
+(text-color:#2b8a3e)[Debug mode is enabled. What would you like to do?]
+
+[[Head to debug area->debugModification]] (text-color:#fcec03)[ - This brings you to the debug modification area where you can edit varable values and jump to differnt parts of the story.]
+
+[[Do nothing and continue as normal->The start]] (text-color:#fcec03)[ - This starts the story like normal without any modifications.]
+
+
 :: end {"position":"2800,500","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: end] [Nerd Value:` $nerdValue`]`]
+]}
 Thank You for playing the demo of ''A Day At School''. Below is a summery of the game.
 
 Name: $userName
@@ -1276,6 +1466,9 @@ $wedgieList
 
 
 :: mirrorStart {"position":"900,700","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: mirrorStart]`]
+]}
 (text-colour:#2b8a3e)[*You look into the Mirror and see yourself and you exmine yourself*]
 <!-- color list : "Red", "Pink", "Purple", "Orange", "Yellow", "Blue", "Green", "Black", "Grey", "White", "Beige"-->
 <!--
@@ -1308,6 +1501,9 @@ $wedgieList
 
 
 :: obBully {"position":"1875,550","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obBully] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "male")[
 	*Against your better judgment and because there are no other spots, you sit next to a known bully... "John"*
     *As you sit down, he notice you*
@@ -1356,6 +1552,9 @@ $wedgieList
 
 
 :: obNerd {"position":"1850,975","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obNerd] [Nerd Value:` $nerdValue`]`]
+]}
 {(if: $bully is "Male")[
 	*You sit next to the nerd. You know who they are. It is Scott dressed in a t-shirt and slacks.*
 ](else:)[
@@ -1462,6 +1661,9 @@ $wedgieList
 
 
 :: obUnknown {"position":"1850,775","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obUnknown] [Nerd Value:` $nerdValue`]`]
+]}
 *You sit next to the person you do not know*
 
 "Hi..." *You say shyly*
@@ -1514,6 +1716,9 @@ $wedgieList
 
 
 :: obbKnock {"position":"2000,475","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obbKnock] [Nerd Value:` $nerdValue`]`]
+]}
 "Knock it off." *You try to say authority but it comes off as pathetic*
 "Oh... the nerd here think they can talk back." *$bullySubjectPronounUpper snare*
 (link:"\"I...I... Didn't m...mean it li...like that?!\"")[=
@@ -1576,6 +1781,9 @@ $wedgieList
 
 
 :: obbOff {"position":"2000,600","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obbOff] [Nerd Value:` $nerdValue`]`]
+]}
 *You give a timidity laugh hoping that the'll stop*
 
 {(if: $bully is "male")[
@@ -1649,6 +1857,9 @@ $wedgieList
 
 
 :: obbkAtomic {"position":"2150,300","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obbkAtomic] [Nerd Value:` $nerdValue`]`]
+]}
 "I... chose... the atomic wedgie..." *You say barely above a whisper*
 
 "...bold choose nerd" *$bullyName says grabing the back of your waistband*
@@ -1720,6 +1931,9 @@ $wedgieList
 
 
 :: obbkShoulder {"position":"2150,425","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obbkShoulder] [Nerd Value:` $nerdValue`]`]
+]}
 "I... chose... the shoulder wedgie..." *You say barely above a whisper*
 "Good chose nerd" *$bullyName says grabing the sides of your waistband*
 (text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
@@ -1791,6 +2005,9 @@ $wedgieList
 
 
 :: obuTrains {"position":"2000,725","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obuTrains] [Nerd Value:` $nerdValue`]`]
+]}
 "Do you like trains?." *You say trying to start a conversation*
 
 "Trains... Trains?" {(if: $bully is "Male")[
@@ -1917,6 +2134,9 @@ $wedgieList
 
 
 :: obuWeather {"position":"2000,850","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obuWeather] [Nerd Value:` $nerdValue`]`]
+]}
 "The weather is nice today." *You say trying to start a conversation*
 
 "Its fine." {(if: $bully is "Male")[
@@ -2073,6 +2293,9 @@ $wedgieList
 
 
 :: onBus {"position":"1700,700","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: onBus] [Nerd Value:` $nerdValue`]`]
+]}
 (if: $currentWedgie is "Chin Atomic")[
 	*You stumble onto the bus with your underwear over your head and stumple around trying to desperlly to find a seat*
     (if: $nerdValue <= 50) [
@@ -2119,6 +2342,9 @@ $wedgieList
 
 
 :: schoolStart {"position":"2400,500","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: schoolStart] [Nerd Value:` $nerdValue`]`]
+]}
 (set: $bullyName to "<UNKNOWN>")
 [[temp to end->end]]
 <!--
@@ -2151,6 +2377,9 @@ $wedgieList
 
 
 :: schoolStartFlagpole {"position":"2400,300","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: schoolStartFlagpole] [Nerd Value:` $nerdValue`]`]
+]}
 "I... won't... chose...." *You say barely above a whisper*
 "You... won't" *$bullyName says putting there hand to there chin in a mock thinking exspression* "Well... I guess i get to chose for you..."
 *$bullySubjectPronounUpper looks out the window as the bus starting pulling into the school. You she $bullyObjectPronounLower light up and turn to you*
@@ -2235,16 +2464,22 @@ $wedgieList
 -->
 
 
-:: walkB {"position":"1400,1800","size":"100,100"}
+:: walkB {"position":"1400,1200","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkB] [Nerd Value:` $nerdValue`]`]
+]}
 (text-colour:#2b8a3e)[*You hope onto your bike and start pedaling to the school*]
 (set: $modeOfTransport to "Bike")
 [[Continue to school->schoolStart]]
 
 
 :: walkS {"position":"1400,1325","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkS] [Nerd Value:` $nerdValue`]`]
+]}
 (text-colour:#2b8a3e)[*You decided the best way to make to school ok without an trouble is take the standard route*
 
-As you walk down the street, you take a look arouns. You see cars passing by, the sun is shining and there is a nice breeze going on. You get to the first intersect that you have to cross, you wait for the light and walk through with no issues. After about 5 min, you see the second intersetion.]{
+As you walk down the street, you take a look around. You see cars passing by, the sun is shining and there is a nice breeze going on. You get to the first intersect that you have to cross, you wait for the light and walk through with no issues. After about 5 min, you see the second intersetion.]{
 (if: $bully is "Female")[
 (set: $bullyName to "Jessica")
 ](else:)[
@@ -2289,11 +2524,80 @@ $wedgieList
 -->
 
 
-:: walkSC {"position":"1600,1400","size":"100,100"}
+:: walkSC {"position":"1600,1525","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSC] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[*You decide to walk into the crowd, surely $bullyName won't notice you*
+
+You stand towards the back the of the pack, you pull out you phone to check email and text messages occasionally glancing up to check around and to make sure... things don't happen.
+
+*As you are looking at your phone, you feel someone bump into you. As you look up to see $bullyName looking right at you.]
+
+(text-colour:#f28a0a)["Sup nerd, tryign to avoid me?"] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says eying you up and down*]
+(text-colour:#f28a0a)["What?! No, I was... just waiting for the... crosswalk"] (text-colour:#2b8a3e)[*You say trying to come up with a quick excuse*]
+(text-colour:#f28a0a)["Well... well... well... what should i do with you?"] (text-colour:#2b8a3e)[*$bullyName says thinking for a moment*]
+(text-colour:#f28a0a)["How about nothing... please... there so many people around."] (text-colour:#2b8a3e)[*You beg pathetically*]
+(text-colour:#f28a0a)["Shut up nerd! Let me think."] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says shoving you around a bit*]
+
+
+
+{(if: $nerdValue >= 50)[
+[[Gives you a normal wedgie->walkSCN]]
+](else:)[
+(text-colour:#a12500)[''`[Locked]` ~~Gives you a normal wedgie~~'']
+]}
+{(if: $nerdValue >= 25)[
+[[Gives you a melvin wedgie->walkSCM]]
+](else:)[
+(text-colour:#a12500)[''`[Locked]` ~~Gives you a melvin wedgie~~'']
+]}
+[[Pants you->walkSCP]]
+<!--
+$modeOfTransport
+$bullyName
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+-->
+
+
+:: walkSCM {"position":"1750,1650","size":"100,100"}
+
+
+
+:: walkSCN {"position":"1750,1400","size":"100,100"}
+
+
+
+:: walkSCP {"position":"1750,1525","size":"100,100"}
 
 
 
 :: walkSH {"position":"1600,1250","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSH] [Nerd Value:` $nerdValue`]`]
+]}
 (text-colour:#2b8a3e)[*You decide to hide behind the bush as that should work... right?*
 
 You make your way to the bush and hide behind it. You feel like you are pretty hidden and should be ok.]
@@ -2334,6 +2638,9 @@ $wedgieList
 
 
 :: walkSHG {"position":"1725,1125","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSHG] [Nerd Value:` $nerdValue`]`]
+]}
 (text-colour:#2b8a3e)[You peek your head above the bush, it looks like no one sees you... you should be good. You duck your head back down and wait for the signal that they cross the street.]
 
 (link:"wait")[=
@@ -2373,6 +2680,9 @@ $wedgieList
 
 
 :: walkSHN {"position":"1725,1250","size":"100,100"}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSHN] [Nerd Value:` $nerdValue`]`]
+]}
 (text-colour:#2b8a3e)[You peek your head above the bush, it seems like no one sees you... you should be good. You duck your head back down and wait for the signal that they cross the street.]
 
 (link:"sit and wait")[=
@@ -2469,5 +2779,5 @@ $wedgieList
 -->
 
 
-:: walkW {"position":"1400,1675","size":"100,100"}
+:: walkW {"position":"1400,2000","size":"100,100"}
 

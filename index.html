@@ -9,7 +9,10 @@
 </head>
 <body>
 <tw-story><noscript><tw-noscript>JavaScript needs to be enabled to play A day at school.</tw-noscript></noscript></tw-story>
-<tw-storydata name="A day at school" startnode="5" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="41EF4D7F-FB76-45D3-8588-5C5B888188A2" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="The start" tags="" position="775,700" size="100,100">(text-colour:#2b8a3e)[{(set: $currentWedgie to &quot;none&quot;)
+<tw-storydata name="A day at school" startnode="5" creator="Twine" creator-version="2.10.0" format="Harlowe" format-version="3.3.9" ifid="41EF4D7F-FB76-45D3-8588-5C5B888188A2" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="The start" tags="" position="775,700" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: The start]`]
+]}
+(text-colour:#2b8a3e)[{(set: $currentWedgie to &quot;none&quot;)
 (set: $prevWedgie to &quot;no&quot;)
 What is your name?}
 (text-colour:#ffffff)[(input-box:2bind $userName,&quot;X==&quot;,&quot;&quot;)]
@@ -48,7 +51,10 @@ It takes a moment for you to adjust to the light and you sit up.]
 ]
 (set: $modeOfTransport to &quot;unknown&quot;)
 }
-[[Look into the mirror-&gt;mirrorStart]]</tw-passagedata><tw-passagedata pid="2" name="characterDesc" tags="" position="1025,700" size="100,100">&lt;!--
+[[Look into the mirror-&gt;mirrorStart]]</tw-passagedata><tw-passagedata pid="2" name="characterDesc" tags="" position="1025,700" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: characterDesc]`]
+]}
+&lt;!--
 $bully
 $userName
 $gender
@@ -177,7 +183,10 @@ Final Look:] (text-colour:#fb00ff)[{
 (set: $wedgieList to &quot;&quot;)
 }
 [[Walk to the bus stop -&gt; busStop]]
-[[Walk to school -&gt; walkSchool]]</tw-passagedata><tw-passagedata pid="3" name="mirrorStart" tags="" position="900,700" size="100,100">(text-colour:#2b8a3e)[*You look into the Mirror and see yourself and you exmine yourself*]
+[[Walk to school -&gt; walkSchool]]</tw-passagedata><tw-passagedata pid="3" name="mirrorStart" tags="" position="900,700" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: mirrorStart]`]
+]}
+(text-colour:#2b8a3e)[*You look into the Mirror and see yourself and you exmine yourself*]
 &lt;!-- color list : &quot;Red&quot;, &quot;Pink&quot;, &quot;Purple&quot;, &quot;Orange&quot;, &quot;Yellow&quot;, &quot;Blue&quot;, &quot;Green&quot;, &quot;Black&quot;, &quot;Grey&quot;, &quot;White&quot;, &quot;Beige&quot;--&gt;
 &lt;!--
 $bully
@@ -205,7 +214,10 @@ $wedgieList
 (text-colour:#2b8a3e)[You have] (cycling-link:bind $underwearPattern, &quot;no pattern&quot;, &quot;rubberducks&quot;, &quot;flowers&quot;, &quot;rainbows and unicorns&quot;, &quot;smiley faces&quot;, &quot;rockets&quot;, &quot;Pokeballs&quot;, &quot;Frozen&quot;, &quot;Cinderella&quot;, &quot;pok-a-dots&quot;, &quot;hearts&quot;, &quot;Cars&quot;, &quot;chess pieces&quot;, &quot;Power Rangers&quot;) (text-colour:#2b8a3e)[themed underwear pattern and your name] (cycling-link:bind $underwearNamed, &quot;is&quot;, &quot;is not&quot;) (text-colour:#2b8a3e)[on them]
 (text-colour:#2b8a3e)[Your underwear] (cycling-link:bind $underwearOut, &quot;is&quot;, &quot;is not&quot;) (text-colour:#2b8a3e)[sticking out the back of your... ummm well you know]
 
-[[Continue-&gt;characterDesc]]</tw-passagedata><tw-passagedata pid="4" name=" busStop" tags="" position="1325,750" size="100,100">*You decide the best course of action is to head to the bus stop and get on the bus*
+[[Continue-&gt;characterDesc]]</tw-passagedata><tw-passagedata pid="4" name=" busStop" tags="" position="1325,750" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: busStop] [Nerd Value:` $nerdValue`]`]
+]}
+*You decide the best course of action is to head to the bus stop and get on the bus*
 
 You walk to the bus stop and, luckly, no one see you.
 (link: &quot;Contiune Walking&quot;)[=
@@ -238,13 +250,20 @@ You make it to the bus stop after a short walk and you stand and wait on your ph
 ](else:)[
 	``[Locked] ``~~Gives you an normal wedgie~~
 ]}
-[[Does nothing-&gt;bsNothing]]</tw-passagedata><tw-passagedata pid="5" name="MainMenu" tags="" position="650,700" size="100,100">(text-colour:#ff6f00)[&#39;&#39;A Day at School&#39;&#39;]
+[[Does nothing-&gt;bsNothing]]</tw-passagedata><tw-passagedata pid="5" name="MainMenu" tags="" position="500,700" size="100,100">{(set: $debug to True)}(text-colour:#ff6f00)[&#39;&#39;A Day at School&#39;&#39;]
 
 (text-colour:#2b8a3e)[This is a (text-colour:#fb00ff)[nsfw wedgie-based interactive story] where players navigate a school day filled with choices and encounters.
 
 I tried really hard making this story so have fun with it and let me know how I did.]
 
-[[Play the Story-&gt;The start]]</tw-passagedata><tw-passagedata pid="6" name="crAtomic" tags="" position="1100,275" size="100,100">{(if: $bully is &quot;Male&quot;)[
+{(if: $debug is True)[
+[[Play the Story-&gt;debugStart]]
+](else:)[
+[[Play the Story-&gt;The start]]
+]}</tw-passagedata><tw-passagedata pid="6" name="crAtomic" tags="" position="1100,275" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crAtomic] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;Male&quot;)[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is &quot;is&quot;)[
 		 and he notices your name &quot;$userName&quot; on the waistband
@@ -347,7 +366,10 @@ And lets not forget that you pants are around your ankles. How will you get of t
 
 [[Try to pull them off your head-&gt;craPullOff]]
 [[Call your sister for help-&gt;craSisHelp]]
-[[Try to rip them-&gt;craRip]]</tw-passagedata><tw-passagedata pid="7" name="crNormal" tags="" position="1350,300" size="100,100">{(if: $bully is &quot;Male&quot;)[
+[[Try to rip them-&gt;craRip]]</tw-passagedata><tw-passagedata pid="7" name="crNormal" tags="" position="1350,300" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crNormal] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;Male&quot;)[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is &quot;is&quot;)[
 		 and he notices your name &quot;$userName&quot; on the waistband
@@ -430,7 +452,10 @@ $underwearNamed
 $underwearOut
 $currentWedgie
 $prevWedgie
---&gt;</tw-passagedata><tw-passagedata pid="8" name="crShoulder" tags="" position="1225,275" size="100,100">{(if: $bully is &quot;Male&quot;)[
+--&gt;</tw-passagedata><tw-passagedata pid="8" name="crShoulder" tags="" position="1225,275" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crShoulder] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;Male&quot;)[
 	*He sees your $underwearWaistbandColor waistband sticking out
 	(if: $underwearNamed is &quot;is&quot;)[
 		 and he notices your name &quot;$userName&quot; on the waistband
@@ -510,7 +535,10 @@ $underwearNamed
 $underwearOut
 $currentWedgie
 $prevWedgie
---&gt;</tw-passagedata><tw-passagedata pid="9" name="crPants" tags="" position="1500,275" size="100,100">*You freeze as you feel your pants fall to your ankles*
+--&gt;</tw-passagedata><tw-passagedata pid="9" name="crPants" tags="" position="1500,275" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene:crPants] [Nerd Value:` $nerdValue`]`]
+]}
+*You freeze as you feel your pants fall to your ankles*
 
 You look down and see your $underwearBaseColor $underwearType with $underwearPattern on them exposed.
 
@@ -526,7 +554,10 @@ You look down and see your $underwearBaseColor $underwearType with $underwearPat
 
 [[Pull them up fast-&gt;crpFast]]
 [[Attempt to pull them up-&gt;crpPull]]
-[[Leave the kitchen and head to the bathroom to pull up your pants-&gt;crpLeave]]</tw-passagedata><tw-passagedata pid="10" name="crNothing" tags="" position="1625,300" size="100,100">*They change there minds and deside it is not worth it*
+[[Leave the kitchen and head to the bathroom to pull up your pants-&gt;crpLeave]]</tw-passagedata><tw-passagedata pid="10" name="crNothing" tags="" position="1625,300" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crNothing] [Nerd Value:` $nerdValue`]`]
+]}
+*They change there minds and deside it is not worth it*
 
 You get in the car without issues and make it to school ok
 
@@ -548,6 +579,9 @@ $underwearOut
 $currentWedgie
 $prevWedgie
 --&gt;
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: tryCarRide] [Nerd Value:` $nerdValue`]`]
+]}
 (text-colour:#2b8a3e)[{(if:$bully is &quot;Male&quot;)[
 	*A car ride would work well as you can make it to the school on time but... your dad might not be too happy about it*
 ](else:)[
@@ -612,7 +646,10 @@ Nerd wherever they like.&quot;]
 ](else:)[
 	(text-colour:#a12500)[&#39;&#39;`[Locked]` ~~Pants you~~&#39;&#39;]
 ]}
-[[Do nothing-&gt;crNothing]]</tw-passagedata><tw-passagedata pid="12" name="schoolStart" tags="" position="2400,500" size="100,100">(set: $bullyName to &quot;&lt;UNKNOWN&gt;&quot;)
+[[Do nothing-&gt;crNothing]]</tw-passagedata><tw-passagedata pid="12" name="schoolStart" tags="" position="2400,500" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: schoolStart] [Nerd Value:` $nerdValue`]`]
+]}
+(set: $bullyName to &quot;&lt;UNKNOWN&gt;&quot;)
 [[temp to end-&gt;end]]
 &lt;!--
 $modeOfTransport
@@ -640,7 +677,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="13" name="crpFast" tags="" position="1725,150" size="100,100">{(if: $bully is &quot;Male&quot;)[
+--&gt;</tw-passagedata><tw-passagedata pid="13" name="crpFast" tags="" position="1725,150" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crpFast] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;Male&quot;)[
 	You pull up yout pants fast before anymore embarrassment can be done from your own father no doubt
 ](else:)[
 	You pull up yout pants fast before anymore embarrassment can be done from your own mother no doubt
@@ -658,7 +698,10 @@ $wedgieList
 ]
 (set: $modeOfTransport to &quot;Car&quot;)
 }
-[[Continue to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="14" name="crpLeave" tags="" position="1425,125" size="100,100">*You leave the kitchen and head to the bathroom*
+[[Continue to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="14" name="crpLeave" tags="" position="1425,125" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crpLeave] [Nerd Value:` $nerdValue`]`]
+]}
+*You leave the kitchen and head to the bathroom*
 
 In there you fix your pants and make sure everything is in order and that your underwear is not sticking out.
 {
@@ -674,7 +717,10 @@ In there you fix your pants and make sure everything is in order and that your u
 ]
 (set: $modeOfTransport to &quot;Car&quot;)
 }
-[[Make your way to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="15" name="crsDis" tags="" position="1300,125" size="100,100">{*You fix your underwear but they are still sticking out the back of your pants*
+[[Make your way to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="15" name="crsDis" tags="" position="1300,125" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crsDis] [Nerd Value:` $nerdValue`]`]
+]}
+{*You fix your underwear but they are still sticking out the back of your pants*
 (set: $prevWedgie to &quot;yes&quot;)
 (set: $currentWedgie to &quot;Stretched&quot;)
 (set: $underwearOut to &quot;is&quot;)
@@ -686,7 +732,10 @@ In there you fix your pants and make sure everything is in order and that your u
 
 *You think about what to do*
 [[Run to the bus stop -&gt; busStop]]
-[[Walk to school -&gt; walkSchool]]</tw-passagedata><tw-passagedata pid="16" name="craPullOff" tags="" position="1175,100" size="100,100">*As you wiggle about, you finally managed to get them off your head*
+[[Walk to school -&gt; walkSchool]]</tw-passagedata><tw-passagedata pid="16" name="craPullOff" tags="" position="1175,100" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: craPullOff] [Nerd Value:` $nerdValue`]`]
+]}
+*As you wiggle about, you finally managed to get them off your head*
 
 You fix yourself as best as you can as your underwear is sticking out still
 {
@@ -702,7 +751,10 @@ You fix yourself as best as you can as your underwear is sticking out still
 New plan, what would you like to do?
 
 [[Run to the bus stop -&gt; busStop]]
-[[Walk to school -&gt; walkSchool]]</tw-passagedata><tw-passagedata pid="17" name="craSisHelp" tags="" position="1025,125" size="100,100">*You yell for your sister which you know is upstairs*
+[[Walk to school -&gt; walkSchool]]</tw-passagedata><tw-passagedata pid="17" name="craSisHelp" tags="" position="1025,125" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: craSisHelp] [Nerd Value:` $nerdValue`]`]
+]}
+*You yell for your sister which you know is upstairs*
 &quot;Hey! Help me! Please!&quot;
 *You hear some footsteps as you hear your sister enter the room*
 &quot;Oh my god $userName, fucking nerd&quot; *She laughs at you* &quot;Do you expect me to help you?&quot;
@@ -721,9 +773,15 @@ New plan, what would you like to do?
 &quot;anyway deal?&quot;
 
 [[Deal-&gt;crasDeal]]
-[[No Deal-&gt;crasNoDeal]]</tw-passagedata><tw-passagedata pid="18" name="craRip" tags="" position="900,200" size="100,100">*You try to rip them off but you find out that your too weak to do so as it hurts too much*
+[[No Deal-&gt;crasNoDeal]]</tw-passagedata><tw-passagedata pid="18" name="craRip" tags="" position="900,200" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: craRip] [Nerd Value:` $nerdValue`]`]
+]}
+*You try to rip them off but you find out that your too weak to do so as it hurts too much*
 
-[[Try to pull them off your head-&gt;craPullOff]]</tw-passagedata><tw-passagedata pid="19" name="crasDeal" tags="" position="1075,0" size="100,100">*She waits for your to say it*
+[[Try to pull them off your head-&gt;craPullOff]]</tw-passagedata><tw-passagedata pid="19" name="crasDeal" tags="" position="1075,0" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crasDeal] [Nerd Value:` $nerdValue`]`]
+]}
+*She waits for your to say it*
 {(if: $bully is &quot;female&quot;) [
 &quot;I&#39;m a nerd who gets wedgied by there mom and deserves it&quot;
 ](else:)[
@@ -765,11 +823,17 @@ $underwearNamed
 $underwearOut
 $currentWedgie
 $prevWedgie
---&gt;</tw-passagedata><tw-passagedata pid="20" name="crasNoDeal" tags="" position="925,0" size="100,100">*She laughs*
+--&gt;</tw-passagedata><tw-passagedata pid="20" name="crasNoDeal" tags="" position="925,0" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crasNoDeal] [Nerd Value:` $nerdValue`]`]
+]}
+*She laughs*
 &quot;Ok suit yourself&quot; *She says as she leaves*
 
 [[Try to pull them off your head-&gt;craPullOff]]
-[[Try to rip them-&gt;craRip]]</tw-passagedata><tw-passagedata pid="21" name="bsAtomic" tags="" position="1525,600" size="100,100">{(if: $bully is &quot;Male&quot;)[
+[[Try to rip them-&gt;craRip]]</tw-passagedata><tw-passagedata pid="21" name="bsAtomic" tags="" position="1525,600" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: bsAtomic] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;Male&quot;)[
 	*Matt approches you*
 ](else:)[
 	*Savannah approches you*
@@ -885,7 +949,10 @@ $underwearNamed
 $underwearOut
 $currentWedgie
 $prevWedgie
---&gt;</tw-passagedata><tw-passagedata pid="22" name="bsDangle" tags="" position="1525,725" size="100,100">{(if: $bully is &quot;Male&quot;)[
+--&gt;</tw-passagedata><tw-passagedata pid="22" name="bsDangle" tags="" position="1525,725" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: bsDangle] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;Male&quot;)[
 	*Matt approches you*
 ](else:)[
 	*Savannah approches you*
@@ -972,7 +1039,10 @@ $underwearNamed
 $underwearOut
 $currentWedgie
 $prevWedgie
---&gt;</tw-passagedata><tw-passagedata pid="23" name="bsNormal" tags="" position="1525,850" size="100,100">{(if: $bully is &quot;Male&quot;)[
+--&gt;</tw-passagedata><tw-passagedata pid="23" name="bsNormal" tags="" position="1525,850" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: bsNormal] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;Male&quot;)[
 	*Matt approches you*
 ](else:)[
 	*Savannah approches you*
@@ -1059,9 +1129,15 @@ $underwearNamed
 $underwearOut
 $currentWedgie
 $prevWedgie
---&gt;</tw-passagedata><tw-passagedata pid="24" name="bsNothing" tags="" position="1525,975" size="100,100">*They don&#39;t do anything as the bus arrives and you board the bus*
+--&gt;</tw-passagedata><tw-passagedata pid="24" name="bsNothing" tags="" position="1525,975" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: bsNothing] [Nerd Value:` $nerdValue`]`]
+]}
+*They don&#39;t do anything as the bus arrives and you board the bus*
 
-[[Get on the bus-&gt;onBus]]</tw-passagedata><tw-passagedata pid="25" name="onBus" tags="" position="1700,700" size="100,100">(if: $currentWedgie is &quot;Chin Atomic&quot;)[
+[[Get on the bus-&gt;onBus]]</tw-passagedata><tw-passagedata pid="25" name="onBus" tags="" position="1700,700" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: onBus] [Nerd Value:` $nerdValue`]`]
+]}
+(if: $currentWedgie is &quot;Chin Atomic&quot;)[
 	*You stumble onto the bus with your underwear over your head and stumple around trying to desperlly to find a seat*
     (if: $nerdValue &lt;= 50) [
     	As you make your way to a seat, you somehow manage to find a seat and sit down without many issues. I mean, you do hear laughing and people taking picures and whispering but atleast your not totally humiliated...// right?//
@@ -1122,6 +1198,9 @@ $currentWedgie
 $prevWedgie
 $nerdValue
 --&gt;
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: crpPull] [Nerd Value:` $nerdValue`]`]
+]}
 *You deside to pull up your pants*
 {(if: $bully is &quot;Male&quot;)[
 	(if: $underwearNamed is &quot;is&quot;)[
@@ -1194,7 +1273,10 @@ You fail to notice your underwear sticking out the back of your pants.
 ]
 ]
 (set: $modeOfTransport to &quot;Car&quot;)}
-[[Contiune to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="27" name="obBully" tags="" position="1875,550" size="100,100">{(if: $bully is &quot;male&quot;)[
+[[Contiune to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="27" name="obBully" tags="" position="1875,550" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obBully] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;male&quot;)[
 	*Against your better judgment and because there are no other spots, you sit next to a known bully... &quot;John&quot;*
     *As you sit down, he notice you*
     &quot;Woh, nerd alert over here&quot; *He say mocking you*
@@ -1238,7 +1320,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="28" name="obUnknown" tags="" position="1850,775" size="100,100">*You sit next to the person you do not know*
+--&gt;</tw-passagedata><tw-passagedata pid="28" name="obUnknown" tags="" position="1850,775" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obUnknown] [Nerd Value:` $nerdValue`]`]
+]}
+*You sit next to the person you do not know*
 
 &quot;Hi...&quot; *You say shyly*
 
@@ -1286,7 +1371,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="29" name="obNerd" tags="" position="1850,975" size="100,100">{(if: $bully is &quot;Male&quot;)[
+--&gt;</tw-passagedata><tw-passagedata pid="29" name="obNerd" tags="" position="1850,975" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obNerd] [Nerd Value:` $nerdValue`]`]
+]}
+{(if: $bully is &quot;Male&quot;)[
 	*You sit next to the nerd. You know who they are. It is Scott dressed in a t-shirt and slacks.*
 ](else:)[
 	*You sit next to the nerd. You know who they are. It is Meg dressed in a t-shirt and legging.*
@@ -1388,7 +1476,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="30" name="obuWeather" tags="" position="2000,850" size="100,100">&quot;The weather is nice today.&quot; *You say trying to start a conversation*
+--&gt;</tw-passagedata><tw-passagedata pid="30" name="obuWeather" tags="" position="2000,850" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obuWeather] [Nerd Value:` $nerdValue`]`]
+]}
+&quot;The weather is nice today.&quot; *You say trying to start a conversation*
 
 &quot;Its fine.&quot; {(if: $bully is &quot;Male&quot;)[
 *He says looking back at you*
@@ -1540,7 +1631,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="31" name="obuTrains" tags="" position="2000,725" size="100,100">&quot;Do you like trains?.&quot; *You say trying to start a conversation*
+--&gt;</tw-passagedata><tw-passagedata pid="31" name="obuTrains" tags="" position="2000,725" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obuTrains] [Nerd Value:` $nerdValue`]`]
+]}
+&quot;Do you like trains?.&quot; *You say trying to start a conversation*
 
 &quot;Trains... Trains?&quot; {(if: $bully is &quot;Male&quot;)[
 *He says looking back at you*
@@ -1662,7 +1756,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="32" name="obbKnock" tags="" position="2000,475" size="100,100">&quot;Knock it off.&quot; *You try to say authority but it comes off as pathetic*
+--&gt;</tw-passagedata><tw-passagedata pid="32" name="obbKnock" tags="" position="2000,475" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obbKnock] [Nerd Value:` $nerdValue`]`]
+]}
+&quot;Knock it off.&quot; *You try to say authority but it comes off as pathetic*
 &quot;Oh... the nerd here think they can talk back.&quot; *$bullySubjectPronounUpper snare*
 (link:&quot;\&quot;I...I... Didn&#39;t m...mean it li...like that?!\&quot;&quot;)[=
 &quot;I...I... Didn&#39;t m...mean it li...like that?!&quot; *You say desperately trying to backpedel*
@@ -1720,7 +1817,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="33" name="obbOff" tags="" position="2000,600" size="100,100">*You give a timidity laugh hoping that the&#39;ll stop*
+--&gt;</tw-passagedata><tw-passagedata pid="33" name="obbOff" tags="" position="2000,600" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obbOff] [Nerd Value:` $nerdValue`]`]
+]}
+*You give a timidity laugh hoping that the&#39;ll stop*
 
 {(if: $bully is &quot;male&quot;)[
 &quot;Your going to laugh at me?&quot; *John says getting a mad*
@@ -1789,7 +1889,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="34" name="schoolStartFlagpole" tags="" position="2400,300" size="100,100">&quot;I... won&#39;t... chose....&quot; *You say barely above a whisper*
+--&gt;</tw-passagedata><tw-passagedata pid="34" name="schoolStartFlagpole" tags="" position="2400,300" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: schoolStartFlagpole] [Nerd Value:` $nerdValue`]`]
+]}
+&quot;I... won&#39;t... chose....&quot; *You say barely above a whisper*
 &quot;You... won&#39;t&quot; *$bullyName says putting there hand to there chin in a mock thinking exspression* &quot;Well... I guess i get to chose for you...&quot;
 *$bullySubjectPronounUpper looks out the window as the bus starting pulling into the school. You she $bullyObjectPronounLower light up and turn to you*
 &quot;I got it... your in for a real treat.&quot; *$bullySubjectPronounUpper says will a sinner smile*
@@ -1870,7 +1973,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="35" name="obbkAtomic" tags="" position="2150,300" size="100,100">&quot;I... chose... the atomic wedgie...&quot; *You say barely above a whisper*
+--&gt;</tw-passagedata><tw-passagedata pid="35" name="obbkAtomic" tags="" position="2150,300" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obbkAtomic] [Nerd Value:` $nerdValue`]`]
+]}
+&quot;I... chose... the atomic wedgie...&quot; *You say barely above a whisper*
 
 &quot;...bold choose nerd&quot; *$bullyName says grabing the back of your waistband*
 (text-style:&quot;bold&quot;,&quot;superscript&quot;,&quot;blur&quot;)[Streeeeeeee](text-style:&quot;bold&quot;,&quot;blur&quot;)[eeeeeeeeeee](text-style:&quot;bold&quot;,&quot;subscript&quot;,&quot;blur&quot;)[eeeeeeeeech]
@@ -1937,7 +2043,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="36" name="obbkShoulder" tags="" position="2150,425" size="100,100">&quot;I... chose... the shoulder wedgie...&quot; *You say barely above a whisper*
+--&gt;</tw-passagedata><tw-passagedata pid="36" name="obbkShoulder" tags="" position="2150,425" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: obbkShoulder] [Nerd Value:` $nerdValue`]`]
+]}
+&quot;I... chose... the shoulder wedgie...&quot; *You say barely above a whisper*
 &quot;Good chose nerd&quot; *$bullyName says grabing the sides of your waistband*
 (text-style:&quot;bold&quot;,&quot;superscript&quot;,&quot;blur&quot;)[Streeeeeeee](text-style:&quot;bold&quot;,&quot;blur&quot;)[eeeeeeeeeee](text-style:&quot;bold&quot;,&quot;subscript&quot;,&quot;blur&quot;)[eeeeeeeeech]
 
@@ -2004,7 +2113,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="37" name="end" tags="" position="2800,500" size="100,100">Thank You for playing the demo of &#39;&#39;A Day At School&#39;&#39;. Below is a summery of the game.
+--&gt;</tw-passagedata><tw-passagedata pid="37" name="end" tags="" position="2800,500" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: end] [Nerd Value:` $nerdValue`]`]
+]}
+Thank You for playing the demo of &#39;&#39;A Day At School&#39;&#39;. Below is a summery of the game.
 
 Name: $userName
 Gender: $gender
@@ -2043,9 +2155,12 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="38" name="walkS" tags="" position="1400,1325" size="100,100">(text-colour:#2b8a3e)[*You decided the best way to make to school ok without an trouble is take the standard route*
+--&gt;</tw-passagedata><tw-passagedata pid="38" name="walkS" tags="" position="1400,1325" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkS] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[*You decided the best way to make to school ok without an trouble is take the standard route*
 
-As you walk down the street, you take a look arouns. You see cars passing by, the sun is shining and there is a nice breeze going on. You get to the first intersect that you have to cross, you wait for the light and walk through with no issues. After about 5 min, you see the second intersetion.]{
+As you walk down the street, you take a look around. You see cars passing by, the sun is shining and there is a nice breeze going on. You get to the first intersect that you have to cross, you wait for the light and walk through with no issues. After about 5 min, you see the second intersetion.]{
 (if: $bully is &quot;Female&quot;)[
 (set: $bullyName to &quot;Jessica&quot;)
 ](else:)[
@@ -2087,9 +2202,15 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="39" name="walkW" tags="" position="1400,1675" size="100,100"></tw-passagedata><tw-passagedata pid="40" name="walkB" tags="" position="1400,1800" size="100,100">(text-colour:#2b8a3e)[*You hope onto your bike and start pedaling to the school*]
+--&gt;</tw-passagedata><tw-passagedata pid="39" name="walkW" tags="" position="1400,2000" size="100,100"></tw-passagedata><tw-passagedata pid="40" name="walkB" tags="" position="1400,1200" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkB] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[*You hope onto your bike and start pedaling to the school*]
 (set: $modeOfTransport to &quot;Bike&quot;)
-[[Continue to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="41" name=" walkSchool" tags="" position="1200,1475" size="100,100">(text-colour:#2b8a3e)[*You decide the best course of action is to walk to school. As you exit your house ready to go to school, you think for a moment*
+[[Continue to school-&gt;schoolStart]]</tw-passagedata><tw-passagedata pid="41" name=" walkSchool" tags="" position="1200,1475" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSchool] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[*You decide the best course of action is to walk to school. As you exit your house ready to go to school, you think for a moment*
 
 *You can stick to the (text-colour:#fb00ff)[&#39;&#39;standard route&#39;&#39;] which takes you on the main roads to school. It should be safe from bullies but you never know.*
 
@@ -2126,7 +2247,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="42" name="walkSH" tags="" position="1600,1250" size="100,100">(text-colour:#2b8a3e)[*You decide to hide behind the bush as that should work... right?*
+--&gt;</tw-passagedata><tw-passagedata pid="42" name="walkSH" tags="" position="1600,1250" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSH] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[*You decide to hide behind the bush as that should work... right?*
 
 You make your way to the bush and hide behind it. You feel like you are pretty hidden and should be ok.]
 
@@ -2162,7 +2286,64 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="43" name="walkSC" tags="" position="1600,1400" size="100,100"></tw-passagedata><tw-passagedata pid="44" name="walkSHN" tags="" position="1725,1250" size="100,100">(text-colour:#2b8a3e)[You peek your head above the bush, it seems like no one sees you... you should be good. You duck your head back down and wait for the signal that they cross the street.]
+--&gt;</tw-passagedata><tw-passagedata pid="43" name="walkSC" tags="" position="1600,1525" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSC] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[*You decide to walk into the crowd, surely $bullyName won&#39;t notice you*
+
+You stand towards the back the of the pack, you pull out you phone to check email and text messages occasionally glancing up to check around and to make sure... things don&#39;t happen.
+
+*As you are looking at your phone, you feel someone bump into you. As you look up to see $bullyName looking right at you.]
+
+(text-colour:#f28a0a)[&quot;Sup nerd, tryign to avoid me?&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says eying you up and down*]
+(text-colour:#f28a0a)[&quot;What?! No, I was... just waiting for the... crosswalk&quot;] (text-colour:#2b8a3e)[*You say trying to come up with a quick excuse*]
+(text-colour:#f28a0a)[&quot;Well... well... well... what should i do with you?&quot;] (text-colour:#2b8a3e)[*$bullyName says thinking for a moment*]
+(text-colour:#f28a0a)[&quot;How about nothing... please... there so many people around.&quot;] (text-colour:#2b8a3e)[*You beg pathetically*]
+(text-colour:#f28a0a)[&quot;Shut up nerd! Let me think.&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says shoving you around a bit*]
+
+
+
+{(if: $nerdValue &gt;= 50)[
+[[Gives you a normal wedgie-&gt;walkSCN]]
+](else:)[
+(text-colour:#a12500)[&#39;&#39;`[Locked]` ~~Gives you a normal wedgie~~&#39;&#39;]
+]}
+{(if: $nerdValue &gt;= 25)[
+[[Gives you a melvin wedgie-&gt;walkSCM]]
+](else:)[
+(text-colour:#a12500)[&#39;&#39;`[Locked]` ~~Gives you a melvin wedgie~~&#39;&#39;]
+]}
+[[Pants you-&gt;walkSCP]]
+&lt;!--
+$modeOfTransport
+$bullyName
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+--&gt;</tw-passagedata><tw-passagedata pid="44" name="walkSHN" tags="" position="1725,1250" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSHN] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[You peek your head above the bush, it seems like no one sees you... you should be good. You duck your head back down and wait for the signal that they cross the street.]
 
 (link:&quot;sit and wait&quot;)[=
 (text-colour:#2b8a3e)[After was seems for an eternity, you hear the sound of the crosswalk allowing people to cross. After waiting until you no longer hear anything]
@@ -2255,7 +2436,10 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="45" name="walkSHG" tags="" position="1725,1125" size="100,100">(text-colour:#2b8a3e)[You peek your head above the bush, it looks like no one sees you... you should be good. You duck your head back down and wait for the signal that they cross the street.]
+--&gt;</tw-passagedata><tw-passagedata pid="45" name="walkSHG" tags="" position="1725,1125" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSHG] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[You peek your head above the bush, it looks like no one sees you... you should be good. You duck your head back down and wait for the signal that they cross the street.]
 
 (link:&quot;wait&quot;)[=
 (text-colour:#2b8a3e)[After was seems for an eternity, you hear the sound of the crosswalk allowing people to cross. You wait until you no longer hear the sound and peek your head out. No one is waiting anymore.]
@@ -2290,7 +2474,109 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata></tw-storydata>
+--&gt;</tw-passagedata><tw-passagedata pid="46" name="walkSCN" tags="" position="1750,1400" size="100,100"></tw-passagedata><tw-passagedata pid="47" name="walkSCM" tags="" position="1750,1650" size="100,100"></tw-passagedata><tw-passagedata pid="48" name="walkSCP" tags="" position="1750,1525" size="100,100"></tw-passagedata><tw-passagedata pid="49" name="debugStart" tags="" position="625,600" size="100,100">(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: debugStart]`]
+
+(text-color:#2b8a3e)[Debug mode is enabled. What would you like to do?]
+
+[[Head to debug area-&gt;debugModification]] (text-color:#fcec03)[ - This brings you to the debug modification area where you can edit varable values and jump to differnt parts of the story.]
+
+[[Do nothing and continue as normal-&gt;The start]] (text-color:#fcec03)[ - This starts the story like normal without any modifications.]</tw-passagedata><tw-passagedata pid="50" name="debugModification" tags="" position="625,475" size="100,100">(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: debugModification]`]
+
+(text-color:#2b8a3e)[Welcome to the debug menu. Please edit varable as you would like and then choose a starting place.]
+
+(text-color:#2b8a3e)[General Info]
+(text-color:#2b8a3e)[-----------------------------------------------]
+(text-colour:#2b8a3e)[What is your name?]
+(text-colour:#2b8a3e)[(input-box:2bind $userName,&quot;X==&quot;,&quot;&quot;)]
+(text-colour:#2b8a3e)[Bullies gender: ] (cycling-link:bind $bully, &quot;Male&quot;, &quot;Female&quot;)
+(text-colour:#2b8a3e)[Your gender: ] (cycling-link:bind $gender, &quot;female&quot;, &quot;male&quot;)
+(text-colour:#2b8a3e)[Shirt: ] (cycling-link:bind $shirtColor, &quot;red&quot;, &quot;pink&quot;, &quot;purple&quot;, &quot;orange&quot;, &quot;yellow&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;black&quot;, &quot;grey&quot;, &quot;white&quot;, &quot;beige&quot;) (cycling-link:bind $shirt, &quot;t-shirt&quot;, &quot;blouse&quot;, &quot;polo&quot;, &quot;button up&quot;, &quot;hoody&quot;)
+(text-colour:#2b8a3e)[Pants: ] (cycling-link:bind $pantsColor, &quot;red&quot;, &quot;pink&quot;, &quot;purple&quot;, &quot;orange&quot;, &quot;yellow&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;black&quot;, &quot;grey&quot;, &quot;white&quot;, &quot;beige&quot;) (cycling-link:bind $pants, &quot;shorts&quot;, &quot;cargo shorts&quot;, &quot;jeans&quot;, &quot;leggings&quot;, &quot;slacks&quot;, &quot;skirt&quot;)
+(text-colour:#2b8a3e)[Hair Color: ] (cycling-link:bind $hairColor, &quot;brown&quot;, &quot;black&quot;, &quot;blond&quot;, &quot;red&quot;)
+(text-colour:#2b8a3e)[Underwear: ] (cycling-link:bind $underwearBaseColor, &quot;red&quot;, &quot;pink&quot;, &quot;purple&quot;, &quot;orange&quot;, &quot;yellow&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;black&quot;, &quot;grey&quot;, &quot;white&quot;, &quot;beige&quot;) (cycling-link:bind $underwearType, &quot;thong&quot;, &quot;boyshorts&quot;, &quot;tighty whites&quot;, &quot;briefs&quot;, &quot;granny panties&quot;) (text-colour:#2b8a3e)[with a] (cycling-link:bind $underwearWaistbandColor, &quot;red&quot;, &quot;pink&quot;, &quot;purple&quot;, &quot;orange&quot;, &quot;yellow&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;black&quot;, &quot;grey&quot;, &quot;white&quot;, &quot;beige&quot;) (text-colour:#2b8a3e)[waistband]
+(text-colour:#2b8a3e)[You have] (cycling-link:bind $underwearPattern, &quot;no pattern&quot;, &quot;rubberducks&quot;, &quot;flowers&quot;, &quot;rainbows and unicorns&quot;, &quot;smiley faces&quot;, &quot;rockets&quot;, &quot;Pokeballs&quot;, &quot;Frozen&quot;, &quot;Cinderella&quot;, &quot;pok-a-dots&quot;, &quot;hearts&quot;, &quot;Cars&quot;, &quot;chess pieces&quot;, &quot;Power Rangers&quot;) (text-colour:#2b8a3e)[themed underwear pattern and your name] (cycling-link:bind $underwearNamed, &quot;is&quot;, &quot;is not&quot;) (text-colour:#2b8a3e)[on them]
+(text-colour:#2b8a3e)[Your underwear] (cycling-link:bind $underwearOut, &quot;is&quot;, &quot;is not&quot;) (text-colour:#2b8a3e)[sticking out the back of your... ummm well you know]
+(text-color:#2b8a3e)[-----------------------------------------------]
+
+
+(text-color:#2b8a3e)[Other Info]
+(text-color:#2b8a3e)[-----------------------------------------------]
+(text-colour:#2b8a3e)[Previous Wedgie:] (cycling-link:bind $prevWedgie, &quot;no&quot;, &quot;yes&quot;)
+(text-colour:#2b8a3e)[Nerd Value: (dropdown: 2bind $nerdValue,&quot;0&quot;,&quot;10&quot;,&quot;20&quot;,&quot;30&quot;,&quot;40&quot;,&quot;50&quot;,&quot;60&quot;,&quot;70&quot;,&quot;80&quot;,&quot;90&quot;,&quot;100&quot;)]
+(text-color:#2b8a3e)[-----------------------------------------------]
+
+
+(text-color:#2b8a3e)[Where would you like to go?]
+[[Normal Start-&gt;charDescDebug]] (text-color:#fcec03)[ - This brings you to the normal start with some modifications so you can start the game like normal]
+
+(text-color:#2b8a3e)[Jump points:]
+[[Car Ride Start-&gt; tryCarRide]] (text-color:#fcec03)[ - This brings you to the start of the car ride branch]
+[[Bus Ride Start-&gt; busStop]] (text-color:#fcec03)[ - This brings you to the start of the bus ride branch]
+[[ - On Bus Start-&gt;onBus]] (text-color:#fcec03)[ - This brings you to where you board the bus]
+[[Walk to School Start-&gt; walkSchool]] (text-color:#fcec03)[ - This brings you to the start of the walk to school branch]
+[[ - Walk to School using the standard route-&gt;walkS]] (text-color:#fcec03)[ - This brings you to walking to school using the standard route]
+[[ - Walk to School using the wood route-&gt;walkS]] (text-color:#fcec03)[ - This brings you to walking to school using the wood route]</tw-passagedata><tw-passagedata pid="51" name="charDescDebug" tags="" position="1025,575" size="100,100">{(if:$bully is &quot;Male&quot;)[
+(set: $bullySubjectPronounUpper to &quot;He&quot;)
+(set: $bullySubjectPronounLower to &quot;he&quot;)
+(set: $bullyObjectPronounUpper to &quot;Him&quot;)
+(set: $bullyObjectPronounLower to &quot;him&quot;)
+](else:)[
+(set: $bullySubjectPronounUpper to &quot;She&quot;)
+(set: $bullySubjectPronounLower to &quot;she&quot;)
+(set: $bullyObjectPronounUpper to &quot;Her&quot;)
+(set: $bullyObjectPronounLower to &quot;her&quot;)
+]
+(set: $modeOfTransport to &quot;unknown&quot;)
+(set: $nerdValue to (num: it))}
+{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: characterDescDebug]`]
+]}
+(text-colour:#2b8a3e)[*As you finish getting ready, you take one final look at yourself*
+
+You are wear a $shirtColor $shirt with $pantsColor $pants.
+{You do a quick spin to check out the rest of the outfit.
+(if:$underwearOut is &quot;is&quot;)[
+	(if:$underwearNamed is &quot;is&quot;)[
+    	As you do, you notice your $underwearBaseColor $underwearType with a $underwearWaistbandColor waistband is clearly visable sticking out the back of your $pants. &quot;$userName&quot; is written on the waistband... such a nerd.
+    ](else:)[
+    	As you do, you notice your $underwearBaseColor $underwearType with $underwearWaistbandColor waistband is clearly visable sticking out the back of your $pants..
+    ]
+](else:)[
+	You don&#39;t notice anything.
+]}
+Final Look:] (text-colour:#fb00ff)[{
+(if: ($nerdValue is  0))[
+	...normal (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else-if: ($nerdValue &gt;= 1) and ($nerdValue &lt;= 25))[
+	little nerdy (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else-if: ($nerdValue &gt;= 26) and ($nerdValue &lt;= 50))[
+	kinda nerdy (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else-if: ($nerdValue &gt;= 51) and ($nerdValue &lt;= 75))[
+	nerd (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else-if: ($nerdValue &gt;= 76) and ($nerdValue &lt;= 99))[
+	pathetic nerd (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+](else:)[
+	total nerd (text-colour:#fcec03)[`[Value:` $nerdValue`]`]
+]
+}]
+
+(Link:&quot;Continue&quot;)[=
+(text-colour:#2b8a3e)[You check the time again:] (text-colour:green)[(text-style:&quot;bold&quot;,&quot;condense&quot;,&quot;blink&quot;)[7:34]]
+
+(text-colour:#2b8a3e)[You need to make it to school and have a few ways of doing it. It doesn&#39;t matter what you choose, you just need to make it to school before first bell...
+
+*You think for a moment*]
+
+{(if:$bully is &quot;Male&quot;)[
+	[[Ask Your Dad for a ride to school -&gt; tryCarRide]]
+](else:)[
+	[[Ask Your Mom for a ride to school -&gt; tryCarRide]]
+]
+(set: $totalWedgies to 0)
+(set: $wedgieList to &quot;&quot;)
+}
+[[Walk to the bus stop -&gt; busStop]]
+[[Walk to school -&gt; walkSchool]]</tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
 var require,define;!function(){var e={},r={};require=function(i){var n=e[i];return n&&(r[i]=n[1].apply(void 0,n[0].map(require)),e[i]=void 0),r[i]},(define=function(r,i,n){if("function"==typeof r)return r();e[r]=[i,n]}).amd=!0}();/*!
  * https://github.com/paulmillr/es6-shim

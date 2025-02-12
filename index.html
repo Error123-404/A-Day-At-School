@@ -2295,7 +2295,7 @@ You stand towards the back the of the pack, you pull out you phone to check emai
 
 *As you are looking at your phone, you feel someone bump into you. As you look up to see $bullyName looking right at you.]
 
-(text-colour:#f28a0a)[&quot;Sup nerd, tryign to avoid me?&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says eying you up and down*]
+(text-colour:#f28a0a)[&quot;Sup nerd, trying to avoid me?&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says eying you up and down*]
 (text-colour:#f28a0a)[&quot;What?! No, I was... just waiting for the... crosswalk&quot;] (text-colour:#2b8a3e)[*You say trying to come up with a quick excuse*]
 (text-colour:#f28a0a)[&quot;Well... well... well... what should i do with you?&quot;] (text-colour:#2b8a3e)[*$bullyName says thinking for a moment*]
 (text-colour:#f28a0a)[&quot;How about nothing... please... there so many people around.&quot;] (text-colour:#2b8a3e)[*You beg pathetically*]
@@ -2474,7 +2474,72 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="46" name="walkSCN" tags="" position="1750,1400" size="100,100"></tw-passagedata><tw-passagedata pid="47" name="walkSCM" tags="" position="1750,1650" size="100,100"></tw-passagedata><tw-passagedata pid="48" name="walkSCP" tags="" position="1750,1525" size="100,100"></tw-passagedata><tw-passagedata pid="49" name="debugStart" tags="" position="625,600" size="100,100">(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: debugStart]`]
+--&gt;</tw-passagedata><tw-passagedata pid="46" name="walkSCN" tags="" position="1750,1400" size="100,100"></tw-passagedata><tw-passagedata pid="47" name="walkSCM" tags="" position="1750,1525" size="100,100">{(if: $debug is True)[
+	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkSCM] [Nerd Value:` $nerdValue`]`]
+]}
+(text-colour:#2b8a3e)[After what feel like forever. $bullyName eyes lights up as $bullySubjectPronounLower step close to you eyeing you down.]
+
+(text-colour:#f28a0a)[&quot;Oh... I got it...&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says only inches from your face*] (text-colour:#f28a0a)[&quot;I think I&#39;ll give you a melvin.&quot;] (text-colour:#2b8a3e)[*$bullyName reaches into the front of your $pants*]
+(text-colour:#f28a0a)[&quot;Wait... please... don&#39;t do this.&quot;] (text-colour:#2b8a3e)[*You beg*]
+(text-colour:#f28a0a)[&quot;But I have to see what underwear you have on. I need to see what completes this nerdy ensemble.&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper pull up slightly revealing your $underwearWaistbandColor*]
+
+(link: &quot;Beg more&quot;)[=
+(text-colour:#f28a0a)[&quot;Please... no more.&quot;] (text-colour:#2b8a3e)[*You contiune to beg pathetically.*]
+(text-colour:#f28a0a)[&quot;Ohhhhhh, a $underwearWaistbandColor waistband... I think it time for some fun. I been stalling long enough. Are you ready?&quot;] (text-colour:#2b8a3e)[*$bullyName says getting a nice tight grip on your waistband.*]
+(text-colour:#f28a0a)[&quot;Nooo....&quot;] (text-colour:#2b8a3e)[*You say in a panic.*]
+
+(text-colour:#2b8a3e)[But it was too late as $bullyName pulls up hard.]
+(text-style:&quot;bold&quot;,&quot;superscript&quot;,&quot;blur&quot;)[Streeeeeeee](text-style:&quot;bold&quot;,&quot;blur&quot;)[eeeeeeeeeee](text-style:&quot;bold&quot;,&quot;subscript&quot;,&quot;blur&quot;)[eeeeeeeeech]
+(text-colour:#f28a0a)[&quot;Aggghhhhhh&quot;] (text-colour:#2b8a3e)[*You yell out in pain as are you given a melvin as you are lifted off the ground slighly.*]
+(text-colour:#f28a0a)[&quot;Haahhhaaaa... $underwearBaseColor $underwearType. These are so pathatic and you deserve this wedgie.&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says exmining your underwear.*]
+
+(link: &quot;\&quot;Please let go... this is so embarrassing.\&quot;&quot;)[=
+(text-colour:#f28a0a)[&quot;Please let go... this is so embarrassing&quot;] (text-colour:#2b8a3e)[*You beg desperately to stop this humiliation.*]
+(text-colour:#f28a0a)[&quot;You want me to let go? Then admit how much of a nerd you are and I&#39;ll let go.&quot;] (text-colour:#2b8a3e)[*$bullyName says pulling harder.*]
+(text-colour:#f28a0a)[&quot;No... I can&#39;t... please... anything else.&quot;] (text-colour:#2b8a3e)[*You plea desperately.*]
+(text-colour:#f28a0a)[&quot;Nope... admit or I&#39;m not stopping.&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says lifting you off the ground by your melvin.*]
+
+(link: &quot;Admit it&quot;)[=
+(text-colour:#f28a0a)[&quot;I&#39;m... a nerd.&quot;] (text-colour:#2b8a3e)[*You say pathetically.*]
+(text-colour:#f28a0a)[&quot;Haha... you said it... I can&#39;t belive it.&quot;] (text-colour:#2b8a3e)[*$bullyName says finally letting go.*] (text-colour:#f28a0a)[&quot;Man... I can&#39;t wait to see you at school... I&#39;m going to make sure everyine know how much of a loser you are.&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says walking away and leaving you to your devices..*]
+
+(text-colour:#2b8a3e)[You adjust your underwear and fix yourself.]
+{(set: $prevWedgie to &quot;yes&quot;)
+(set: $modeOfTransport to &quot;walk&quot;)
+(set: $totalWedgies to it+1)
+(set: $nerdValue to it + 25)
+(if: $nerdValue &gt; 100)[
+	(set: $nerdValue to 100)
+]
+(set: $wedgieList to it + &quot; On the walk to school, &quot; + $bullyName + &quot; gave you a hard melvin lifting you off the ground.&quot;)}
+[[Proceed the rest of the route without issues-&gt;schoolStart]]
+&lt;!--
+$modeOfTransport
+$bullyName
+$bully
+$bullySubjectPronounUpper
+$bullySubjectPronounLower
+$bullyObjectPronounUpper
+$bullyObjectPronounLower
+$userName
+$gender
+$shirt
+$shirtColor
+$pants
+$pantsColor
+$hairColor
+$underwearType
+$underwearBaseColor
+$underwearWaistbandColor
+$underwearPattern
+$underwearNamed
+$underwearOut
+$currentWedgie
+$prevWedgie
+$nerdValue
+$totalWedgies
+$wedgieList
+--&gt;</tw-passagedata><tw-passagedata pid="48" name="walkSCP" tags="" position="1750,1650" size="100,100"></tw-passagedata><tw-passagedata pid="49" name="debugStart" tags="" position="625,600" size="100,100">(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: debugStart]`]
 
 (text-color:#2b8a3e)[Debug mode is enabled. What would you like to do?]
 

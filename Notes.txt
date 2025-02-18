@@ -2,6 +2,7 @@ Ending Values for Wedgies:
 - Chin Atomic : Walk
 - Shoulder : Walk
 - Panted Chin Atomic : Ground
+- Panted Nose Atomic : Walk
 
 Ending Values for Transport:
 - Bike

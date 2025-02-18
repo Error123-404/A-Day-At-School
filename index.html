@@ -2205,7 +2205,7 @@ $prevWedgie
 $nerdValue
 $totalWedgies
 $wedgieList
---&gt;</tw-passagedata><tw-passagedata pid="39" name="walkW" tags="" position="1600,1900" size="100,100"></tw-passagedata><tw-passagedata pid="40" name="walkB" tags="" position="1400,1200" size="100,100">{(if: $debug is True)[
+--&gt;</tw-passagedata><tw-passagedata pid="39" name="walkW" tags="" position="1600,1800" size="100,100"></tw-passagedata><tw-passagedata pid="40" name="walkB" tags="" position="1400,1200" size="100,100">{(if: $debug is True)[
 	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: walkB] [Nerd Value:` $nerdValue`]`]
 ]}
 (text-colour:#2b8a3e)[*You hope onto your bike and start pedaling to the school*]
@@ -2620,6 +2620,58 @@ $wedgieList
 ](else:)[
 (text-colour:#f28a0a)[&quot;I mean there they are $underwearBaseColor $underwearType and they are $underwearPattern themed with a $underwearWaistbandColor waistband... so pathetic.&quot;] (text-colour:#2b8a3e)[*$bullyName continues*]
 ]}
+
+(link: &quot;Pull up your $pants&quot;)[=
+(if: $underwearNamed is &quot;is&quot;)[
+(text-colour:#2b8a3e)[*As you bend over to pick them, $bullyName put there foot on your $pants preventing from you pulling them up.*]
+(text-colour:#f28a0a)[&quot;Woh, hold on there nerd. I noticed that you wrote &quot;$userName&quot; on your waistband... do you know what that means?&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper grabing the back of your waistband*]
+(text-colour:#f28a0a)[&quot;Wa... wait... ple..please&quot;] (text-colour:#2b8a3e)[*You beg pathetically*]
+(text-colour:#f28a0a)[&quot;Too late&quot;] (text-colour:#2b8a3e)[*$bullyName says in a sing-songy tone*]
+(text-style:&quot;bold&quot;,&quot;superscript&quot;,&quot;blur&quot;)[Streeeeeeee](text-style:&quot;bold&quot;,&quot;blur&quot;)[eeeeeeeeeee](text-style:&quot;bold&quot;,&quot;subscript&quot;,&quot;blur&quot;)[eeeeeeeeech]
+(text-colour:#f28a0a)[&quot;Aggghhhhh&quot;] (text-colour:#2b8a3e)[*You let out as your $underwearType gets pulled up to your shoulders with ease*]
+(text-colour:#f28a0a)[&quot;Wow.. these are so strechy. I guess with you being a nerd, there is only one way this will end.. an atomic wedgie, but I want you to ask for it.&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says pulling even harder*]
+
+(link: &quot;\&quot;What?!\&quot;&quot;)[=
+(text-colour:#f28a0a)[&quot;What?! No... please... don&#39;t make me ask for it...&quot;] (text-colour:#2b8a3e)[*You say in a panic*]
+(text-colour:#f28a0a)[Do it... or ill make sure that when we get to school, I&#39;ll hang you on the flagpole.&quot;] (text-colour:#2b8a3e)[*$bullyName says pulling even harder getting your $underwearType to past your head at this point*]
+(text-colour:#f28a0a)[&quot;Ugh... can you please give me an atomic wedgie...&quot;] (text-colour:#2b8a3e)[*You say in a defeated tone*]
+(text-colour:#f28a0a)[&quot;Well... sense you asked so nicely...&quot;]
+(text-style:&quot;bold&quot;,&quot;blur&quot;)[SNAP!]
+
+(text-colour:#2b8a3e)[$bullyName snaps your waistband right under your nose like the nerd you are. She laughts are you as she takes some photos of you.]
+(text-colour:#f28a0a)[&quot;Well... my work here is done. See you later loser.&quot;] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says as $bullySubjectPronounLower walks away*]
+*You desperly try to take them off your head but is unable to*
+(text-colour:#f28a0a)[&quot;Wait.. please... i&#39;m stuck&quot;] (text-colour:#2b8a3e)[*yell out too late as $bullySubjectPronounLower is no where to be found*]{
+(set: $prevWedgie to &quot;yes&quot;)
+(set: $modeOfTransport to &quot;walk&quot;)
+(set: $totalWedgies to it+1)
+(set: $nerdValue to it + 40)
+(if: $nerdValue &gt; 100)[
+	(set: $nerdValue to 100)
+]
+(set: $currentWedgie to &quot;Panted Nose Atomic&quot;)
+(set: $wedgieList to it + &quot; On the walk to school, &quot; + $bullyName + &quot; panted you. Upon seeing your name on the waistband, gave you an atomic wedgie hooked under your nose.&quot;)
+}
+[[Continue to school with your underwear over your head and pants around your ankles-&gt;schoolStart]]
+](else:)[
+(text-colour:#2b8a3e)[*As you bend over to pick them, you feel a shove on your back as you are pushed over to the ground.*]
+(text-colour:#f28a0a)[&quot;Ughhh&quot;] (text-colour:#2b8a3e)[*You let out as you hit the ground*]
+(text-colour:#f28a0a)[&quot;Hahahahaha... how does it feel to be such a nerd, you are so pathetic.&quot;] (text-colour:#2b8a3e)[*$bully laughs out*]
+(text-colour:#2b8a3e)[*As you try to recover, you hear a picures being taken as $bullySubjectPronounLower walks away leaving you on the ground*]
+
+(link: &quot;Get up and fix yourself&quot;)[=
+(text-colour:#2b8a3e)[You get up to and pull up your $pants and adjust your cloths.] {
+(set: $prevWedgie to &quot;yes&quot;)
+(set: $modeOfTransport to &quot;walk&quot;)
+(set: $totalWedgies to it+1)
+(set: $nerdValue to it + 15)
+(if: $nerdValue &gt; 100)[
+	(set: $nerdValue to 100)
+]
+(set: $wedgieList to it + &quot; On the walk to school, &quot; + $bullyName + &quot; panted you and pushed you over.&quot;)
+}
+[[Continue to school without issues-&gt;schoolStart]]
+]
 &lt;!--
 $modeOfTransport
 $bullyName

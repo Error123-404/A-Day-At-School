@@ -2743,6 +2743,58 @@ $wedgieList
 ](else:)[
 (text-colour:#f28a0a)["I mean there they are $underwearBaseColor $underwearType and they are $underwearPattern themed with a $underwearWaistbandColor waistband... so pathetic."] (text-colour:#2b8a3e)[*$bullyName continues*]
 ]}
+
+(link: "Pull up your $pants")[=
+(if: $underwearNamed is "is")[
+(text-colour:#2b8a3e)[*As you bend over to pick them, $bullyName put there foot on your $pants preventing from you pulling them up.*]
+(text-colour:#f28a0a)["Woh, hold on there nerd. I noticed that you wrote "$userName" on your waistband... do you know what that means?"] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper grabing the back of your waistband*]
+(text-colour:#f28a0a)["Wa... wait... ple..please"] (text-colour:#2b8a3e)[*You beg pathetically*]
+(text-colour:#f28a0a)["Too late"] (text-colour:#2b8a3e)[*$bullyName says in a sing-songy tone*]
+(text-style:"bold","superscript","blur")[Streeeeeeee](text-style:"bold","blur")[eeeeeeeeeee](text-style:"bold","subscript","blur")[eeeeeeeeech]
+(text-colour:#f28a0a)["Aggghhhhh"] (text-colour:#2b8a3e)[*You let out as your $underwearType gets pulled up to your shoulders with ease*]
+(text-colour:#f28a0a)["Wow.. these are so strechy. I guess with you being a nerd, there is only one way this will end.. an atomic wedgie, but I want you to ask for it."] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says pulling even harder*]
+
+(link: "\"What?!\"")[=
+(text-colour:#f28a0a)["What?! No... please... don't make me ask for it..."] (text-colour:#2b8a3e)[*You say in a panic*]
+(text-colour:#f28a0a)[Do it... or ill make sure that when we get to school, I'll hang you on the flagpole."] (text-colour:#2b8a3e)[*$bullyName says pulling even harder getting your $underwearType to past your head at this point*]
+(text-colour:#f28a0a)["Ugh... can you please give me an atomic wedgie..."] (text-colour:#2b8a3e)[*You say in a defeated tone*]
+(text-colour:#f28a0a)["Well... sense you asked so nicely..."]
+(text-style:"bold","blur")[SNAP!]
+
+(text-colour:#2b8a3e)[$bullyName snaps your waistband right under your nose like the nerd you are. She laughts are you as she takes some photos of you.]
+(text-colour:#f28a0a)["Well... my work here is done. See you later loser."] (text-colour:#2b8a3e)[*$bullySubjectPronounUpper says as $bullySubjectPronounLower walks away*]
+*You desperly try to take them off your head but is unable to*
+(text-colour:#f28a0a)["Wait.. please... i'm stuck"] (text-colour:#2b8a3e)[*yell out too late as $bullySubjectPronounLower is no where to be found*]{
+(set: $prevWedgie to "yes")
+(set: $modeOfTransport to "walk")
+(set: $totalWedgies to it+1)
+(set: $nerdValue to it + 40)
+(if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+]
+(set: $currentWedgie to "Panted Nose Atomic")
+(set: $wedgieList to it + " On the walk to school, " + $bullyName + " panted you. Upon seeing your name on the waistband, gave you an atomic wedgie hooked under your nose.")
+}
+[[Continue to school with your underwear over your head and pants around your ankles->schoolStart]]
+](else:)[
+(text-colour:#2b8a3e)[*As you bend over to pick them, you feel a shove on your back as you are pushed over to the ground.*]
+(text-colour:#f28a0a)["Ughhh"] (text-colour:#2b8a3e)[*You let out as you hit the ground*]
+(text-colour:#f28a0a)["Hahahahaha... how does it feel to be such a nerd, you are so pathetic."] (text-colour:#2b8a3e)[*$bully laughs out*]
+(text-colour:#2b8a3e)[*As you try to recover, you hear a picures being taken as $bullySubjectPronounLower walks away leaving you on the ground*]
+
+(link: "Get up and fix yourself")[=
+(text-colour:#2b8a3e)[You get up to and pull up your $pants and adjust your cloths.] {
+(set: $prevWedgie to "yes")
+(set: $modeOfTransport to "walk")
+(set: $totalWedgies to it+1)
+(set: $nerdValue to it + 15)
+(if: $nerdValue > 100)[
+	(set: $nerdValue to 100)
+]
+(set: $wedgieList to it + " On the walk to school, " + $bullyName + " panted you and pushed you over.")
+}
+[[Continue to school without issues->schoolStart]]
+]
 <!--
 $modeOfTransport
 $bullyName
@@ -2957,5 +3009,5 @@ $wedgieList
 -->
 
 
-:: walkW {"position":"1600,1900","size":"100,100"}
+:: walkW {"position":"1600,1800","size":"100,100"}
 

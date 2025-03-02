@@ -252,7 +252,7 @@ You walk to the bus stop and, luckly, no one see you.]
 ](else:)[
 	(text-colour:#a12500)[``[Locked] ``~~Gives you an normal wedgie~~]
 ]}
-[[Does nothing-&gt;bsNothing]]</tw-passagedata><tw-passagedata pid="5" name="MainMenu" tags="" position="500,700" size="100,100">{(set: $debug to True)}(text-colour:#ff6f00)[&#39;&#39;A Day at School&#39;&#39;]
+[[Does nothing-&gt;bsNothing]]</tw-passagedata><tw-passagedata pid="5" name="MainMenu" tags="" position="500,700" size="100,100">{(set: $debug to False)}(text-colour:#ff6f00)[&#39;&#39;A Day at School&#39;&#39;]
 
 (text-colour:#2b8a3e)[This is a (text-colour:#fb00ff)[nsfw wedgie-based interactive story] where players navigate a school day filled with choices and encounters.
 
@@ -652,7 +652,7 @@ Nerd wherever they like.&quot;]
 	(text-color:#fcec03)[`[Debug Mode: Enabled] [Scene: schoolStart] [Nerd Value:` $nerdValue`]`]
 ]}
 (set: $bullyName to &quot;&lt;UNKNOWN&gt;&quot;)
-[[temp to end-&gt;end]]
+[[Continue To The End-&gt;end]]
 &lt;!--
 $modeOfTransport
 $bullyName
@@ -2216,13 +2216,13 @@ $wedgieList
 (text-colour:#2b8a3e)[*You decide the best course of action is to walk to school. As you exit your house ready to go to school, you think for a moment*
 
 *You can stick to the (text-colour:#fb00ff)[&#39;&#39;standard route&#39;&#39;] which takes you on the main roads to school. It should be safe from bullies but you never know.*
-
+&lt;!--
 *You can take the shortcut (text-colour:#fb00ff)[&#39;&#39;through the woods&#39;&#39;], it should be a little faster and no one normally takes it but you never know what could happen.*
-
+--&gt;
 *You could take your (text-colour:#fb00ff)[&#39;&#39;bike&#39;&#39;] to school. This would guarantee that you would make it to school without anyone stopping you... or worst.*]
 
-[[Take the standard route-&gt;walkS]]
-[[Take the route through the woods-&gt;walkW]]
+[[Take the standard route-&gt;walkS]]&lt;!--
+[[Take the route through the woods-&gt;walkW]]--&gt;
 [[Take your bike to school-&gt;walkB]]
 &lt;!--
 $modeOfTransport
